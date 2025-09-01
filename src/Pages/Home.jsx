@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router'
+import Big_Box from '../components/Home/Big_Box'
+import Top_picks from '../components/Home/Top_picks'
 
 const Home = () => {
   return (
@@ -14,7 +16,12 @@ const Home = () => {
           <img src="https://demo.leebrosus.com/kosi/wp-content/uploads/2021/08/rev_home1_2.png" alt="" className='w-[71%]'/>
         </div>
       </div>
-      
+      <div id="sec-2">
+        <Big_Box />
+      </div>
+      <div id="sec-3">
+        <Top_picks />
+      </div>
     </div>
   )
 }
