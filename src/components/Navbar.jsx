@@ -3,35 +3,35 @@ import { Link, NavLink } from "react-router";
 
 const Navbar = () => {
     return (
-        <nav className="w-full px-[5vw] py-[2vh]  flex items-center justify-between">
+        <nav className="w-full px-[5vw] py-[2vh] bg-[#F5E5D7] flex items-center justify-between font-Inter">
             {/* Section 1: Image and Text */}
             <img src="https://demo.leebrosus.com/kosi/wp-content/uploads/2021/07/logo.svg" alt="Logo" />
 
             {/* Section 2: Navigation Buttons */}
-            <div className="flex items-center gap-[10%] text-[1.3vw] font-semibold\ uppercase translate-x-4/12">
+            <div className="flex items-center gap-[10%] text-[1.1vw] font-medium translate-x-4/12">
                 <NavLink
                     to="/"
                     className={({ isActive }) => isActive ? "text-yellow-600" : ""}
                 >
-                    <button>Home</button>
+                    <button className="uppercase hover:cursor-pointer hover:text-yellow-800">Home</button>
                 </NavLink>
                 <NavLink
                     to="/shop"
                     className={({ isActive }) => isActive ? "text-yellow-600" : ""}
                 >
-                    <button>Shop</button>
+                    <button className="uppercase hover:cursor-pointer hover:text-yellow-800">Shop</button>
                 </NavLink>
                 <NavLink
                     to="/about"
                     className={({ isActive }) => isActive ? "text-yellow-600" : ""}
                 >
-                    <button>About</button>
+                    <button className="uppercase hover:cursor-pointer hover:text-yellow-800">About</button>
                 </NavLink>
                 <NavLink
                     to="/contact"
                     className={({ isActive }) => isActive ? "text-yellow-600" : ""}
                 >
-                    <button>Contact</button>
+                    <button className="uppercase hover:cursor-pointer hover:text-yellow-800">Contact</button>
                 </NavLink>
             </div>
 
