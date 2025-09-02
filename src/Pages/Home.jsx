@@ -7,8 +7,8 @@ import Blogs from '../components/Home/Blogs'
 
 const Home = () => {
   return (
-    <div className='w-screen font-TASA-Orbiter'>
-      <div id="sec-1" className='bg-[#F5E5D7] h-screen w-full flex items-center justify-center gap-[5vw]'>
+    <div className='w-screen font-TASA-Orbiter absolute  top-0'>
+      <div id="sec-1" className='bg-[#F5E5D7] pt-[10%] overflow-hidden h-screen w-full flex items-center justify-center gap-[5vw]'>
         <div id="sec-1-1" className='w-fit'>
           <img src="https://demo.leebrosus.com/kosi/wp-content/uploads/2021/08/rev_home1.png" alt="" />
           <h2 className='text-[6vw] font-semibold leading-none font-Asimovian my-[10%]'> Wooden <br /> Floor Lamp </h2>
