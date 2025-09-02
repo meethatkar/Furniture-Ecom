@@ -1,6 +1,7 @@
 import React from 'react'
 import Contact_dets from '../components/Contact/Contact_dets'
 import { useForm } from 'react-hook-form'
+import MapFile from '../components/Contact/MapFile';
 
 const Contact = () => {
 
@@ -56,6 +57,9 @@ const Contact = () => {
 
           <button className="bg-[#B88E2F] text-white px-8 py-3 rounded text-lg font-medium" type='submit'>Submit</button>
         </form>
+      </div>
+      <div id="map-div">
+        <MapFile/>
       </div>
     </div>
   )
