@@ -11,6 +11,9 @@
 body{
     overflow-x: hidden;
 }
+body::-webkit-scrollbar{
+  display: none;
+}
 
 @keyframes rotate360 {
   from {
