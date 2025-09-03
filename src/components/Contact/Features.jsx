@@ -21,13 +21,13 @@ const Features = () => {
     },
   ]
   return (
-    <div className='flex items-center justify-center gap-[5%] px-[5vw] py-[5%] bg-[#FCF6F2] '>
-      {data.map((single_data)=>(
-        <div className="feature-dets w-4/12 flex items-start gap-[5%]">
+    <div className='flex md:flex-row flex-col items-center justify-center gap-[5%] px-[5vw] py-[5%] bg-[#FCF6F2] '>
+      {data.map((single_data,index)=>(
+        <div className="feature-dets w-full md:w-4/12 flex md:flex-row flex-col items-center md:items-start gap-[5%]" key={index}>
           {single_data.icon_tag}
-          <div className="f-dets w-9/12 text-start">
-            <h3 className='text-[1.8vw] leading-none mb-[6%] font-semibold'> {single_data.feature_name} </h3>
-            <p className='text-[1.1vw] text-black/60'> {single_data.feature_desc} </p>
+          <div className="f-dets w-full md:w-9/12 text-center md:text-start md:mb-0 mb-[10%]">
+            <h3 className='text-[3vmax] md:text-[1.8vmax] leading-none mt-[3%] md:mt-0 mb-[1%] md:mb-[6%] font-semibold'> {single_data.feature_name} </h3>
+            <p className='text-[2.5vmax] md:text-[1.1vmax] text-black/60'> {single_data.feature_desc} </p>
           </div>
         </div>
       ))}
