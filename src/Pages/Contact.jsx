@@ -16,14 +16,14 @@ const Contact = () => {
 
   return (
     <div className='py-[2%] w-screen text-center'>
-      <h2 className='text-[3vw] tracking-tight font-medium'> Get In Touch With Us </h2>
-      <p className='text-[1vw] text-black/50'> For More Information About Our Product & Services. Please Feel Free To Drop Us An Email. <br /> Our Staff Always Be There To Help You Out. Do Not Hesitate! </p>
-      <div id="form-div" className='w-full my-[5%] px-[5vw] flex justify-center'>
-        <div id="part-1" className='w-4/12'>
+      <h2 className='text-[4vmax] md:text-[3vmax] tracking-tight font-medium'> Get In Touch With Us </h2>
+      <p className='text-[2vmax] md:text-[1vmax] w-10/12 mx-auto md:w-fit  text-black/50'> For More Information About Our Product & Services. Please Feel Free To Drop Us An Email. <br /> Our Staff Always Be There To Help You Out. Do Not Hesitate! </p>
+      <div id="form-div" className='w-full my-[5%] px-[5vw] flex md:flex-row flex-col justify-center gap-[5%]'>
+        <div id="part-1" className='w-full md:w-4/12'>
           <Contact_dets />
         </div>
-        <form id="part-2" onSubmit={handleSubmit(submitForm)} className='w-8/12 text-start'>
-          <div className="grid grid-cols-2 gap-8 mb-8">
+        <form id="part-2" onSubmit={handleSubmit(submitForm)} className='w-full md:w-8/12 text-start'>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             <div>
               <label htmlFor="name" className="block text-black text-xl font-normal mb-2">Your name *</label>
               <input type="text" id="name" placeholder="John Doe" className="w-full p-3 border border-gray-300 rounded"

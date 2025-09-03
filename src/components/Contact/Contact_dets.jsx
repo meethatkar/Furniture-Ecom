@@ -25,17 +25,17 @@ const Contact_dets = () => {
     ]
 
   return (
-    <div className="flex flex-col gap-10">
+    <div className="flex flex-col gap-10 my-[15%] md:my-0">
         {
             data.map((item, index) => (
-                <div key={index} className="flex gap-[1.5vw]">
+                <div key={index} className="flex flex-col md:flex-row items-center gap-[1.5vw]">
                     <div className="text-gray-700">
                         {item.icon}
                     </div>
-                    <div className='text-start'>
-                        <h3 className="text-[1.7vw] font-medium mb-[0.5vw]">{item.heading}</h3>
-                        <p className="text-gray-600 text-[1vw]">{item.dets1}</p>
-                        <p className="text-gray-600 text-[1vw]">{item.dets2}</p>
+                    <div className='text-center md:text-start'>
+                        <h3 className="text-[4vmax] md:text-[1.7vmax] font-medium mb-[0.5vw]">{item.heading}</h3>
+                        <p className="text-gray-600 text-[2.5vmax] md:text-[1vmax]">{item.dets1}</p>
+                        <p className="text-gray-600 text-[2.5vmax] md:text-[1vmax]">{item.dets2}</p>
                     </div>
                 </div>
             ))
