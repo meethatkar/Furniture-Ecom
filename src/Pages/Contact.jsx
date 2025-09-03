@@ -2,6 +2,7 @@ import React from 'react'
 import Contact_dets from '../components/Contact/Contact_dets'
 import { useForm } from 'react-hook-form'
 import MapFile from '../components/Contact/MapFile';
+import Features from '../components/Contact/Features';
 
 const Contact = () => {
 
@@ -14,10 +15,10 @@ const Contact = () => {
   }
 
   return (
-    <div className='py-[2%] w-screen px-[5vw] text-center'>
+    <div className='py-[2%] w-screen text-center'>
       <h2 className='text-[3vw] tracking-tight font-medium'> Get In Touch With Us </h2>
       <p className='text-[1vw] text-black/50'> For More Information About Our Product & Services. Please Feel Free To Drop Us An Email. <br /> Our Staff Always Be There To Help You Out. Do Not Hesitate! </p>
-      <div id="form-div" className='w-full my-[5%] flex justify-center'>
+      <div id="form-div" className='w-full my-[5%] px-[5vw] flex justify-center'>
         <div id="part-1" className='w-4/12'>
           <Contact_dets />
         </div>
@@ -61,6 +62,7 @@ const Contact = () => {
       <div id="map-div">
         <MapFile/>
       </div>
+      <Features/>
     </div>
   )
 }

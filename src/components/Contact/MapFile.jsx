@@ -4,11 +4,15 @@ import 'leaflet/dist/leaflet.css' // ✅ important for proper styling
 
 const MapFile = () => {
   return (
-    <div className="w-full">
+    <div className="w-full relative">    
+
       <MapContainer 
         center={[40.7128, -74.0060]} 
         zoom={12} 
         className="w-full h-[80vh] rounded-sm shadow-lg"
+        scrollWheelZoom={false}
+        // doubleClickZoom={false}
+        touchZoom={true}
       >
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
