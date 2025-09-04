@@ -7,6 +7,7 @@ import { Home, About, Account, Cart, Contact, Like, Shop, Blog } from './Pages/i
 import BlogPreview from './components/Blog/BlogPreview.jsx'
 import BlogCategory from './components/Blog/BlogCategory.jsx'
 import AllBlog from './components/Blog/AllBlog.jsx'
+import SearchBlog from './components/Blog/SearchBlog.jsx'
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
           {
             path: ":category",
             element: <BlogCategory/>
+          },
+          {
+            path: "search",
+            element: <SearchBlog />
           }
         ]
       },
