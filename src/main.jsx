@@ -4,6 +4,9 @@ import { RouterProvider, createBrowserRouter } from 'react-router'
 import './index.css'
 import App from './App.jsx'
 import { Home, About, Account, Cart, Contact, Like, Shop, Blog } from './Pages/index.js';
+import BlogPreview from './components/Blog/BlogPreview.jsx'
+import BlogCategory from './components/Blog/BlogCategory.jsx'
+import AllBlog from './components/Blog/AllBlog.jsx'
 
 const router = createBrowserRouter([
   {
@@ -20,7 +23,17 @@ const router = createBrowserRouter([
       },
       {
         path: "/blog",
-        element: <Blog />
+        element: <Blog />,
+        children: [
+          {
+            path: "",     //blank menas default child
+            element: <AllBlog />
+          },
+          {
+            path: ":category",
+            element: <BlogCategory/>
+          }
+        ]
       },
       {
         path: "/account",
