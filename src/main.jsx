@@ -8,6 +8,7 @@ import BlogPreview from './components/Blog/BlogPreview.jsx'
 import BlogCategory from './components/Blog/BlogCategory.jsx'
 import AllBlog from './components/Blog/AllBlog.jsx'
 import SearchBlog from './components/Blog/SearchBlog.jsx'
+import SingleBlog from './components/Blog/SingleBlog.jsx'
 
 const router = createBrowserRouter([
   {
@@ -32,11 +33,21 @@ const router = createBrowserRouter([
           },
           {
             path: ":category",
-            element: <BlogCategory/>
+            element: <BlogCategory/>,
+            children:[
+              {
+                path: "blog-dets/:id",
+                element: <SingleBlog />
+              }
+            ]
           },
           {
             path: "search",
             element: <SearchBlog />
+          },
+          {
+            path: "blog-dets/:id",
+            element: <SingleBlog />
           }
         ]
       },
