@@ -13,12 +13,12 @@ const Blog = () => {
     <h1 className='w-fit mx-auto text-[1.5vmax] leading-none font-Asimovian underline font-light my-[2%]'> BLOGS 
       <span className='font-TASA-Orbiter'>{routeObj.category ? (` > ${routeObj.category}`):" > ALL"}</span>
     </h1>
-    <div className='flex justify-between w-screen px-[5vw]'>
-    <div id="blogs" className='w-[73%]'>
+    <div className='flex md:flex-row flex-col-reverse justify-between w-screen px-[5vw]'>
+    <div id="blogs" className='md:w-[73%] w-full'>
     <Outlet/>
     {/* <BlogPreview /> */}
     </div>
-    <div id="blog-overview" className='w-3/12'>
+    <div id="blog-overview" className='md:w-3/12 w-full'>
       <BlogOverview/>
     </div>
     </div>
