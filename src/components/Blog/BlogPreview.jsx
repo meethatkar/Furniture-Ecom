@@ -18,7 +18,7 @@ const BlogPreview = (
                 <span className='w-full flex items-center text-[1.9vmax] md:text-[0.9vmax] text-black/50  whitespace-nowrap'> <User className='mr-[1%] scale-80' />admin - <Calendar className='ml-[1%] mx-[1%] scale-80'/> {singleBlog.date} - <Tag className='-scale-x-80 scale-80 ml-[1%] mx-[1%]' /> {singleBlog.category} </span>
                 <h2 className='text-[3.2vmax]  md:text-[2.5vmax] font-medium leading-none my-[2%] md:my-[1%]'> {singleBlog.title} </h2>
                 <p className='text-[2vmax] md:text-[1.2vmax] text-black/50 mb-[2%]'> {singleBlog.previewDesc}  </p>
-                <Link className='underline text-[2.5vmax] md:text-[1.5vmax] font-normal' to="/"> Read more </Link>
+                <Link className='underline text-[2.5vmax] md:text-[1.5vmax] font-normal' to={`blog-dets/${singleBlog.id}`}> Read more </Link>
             </div>
         ))}
     </div>    

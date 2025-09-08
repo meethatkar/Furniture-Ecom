@@ -3,12 +3,14 @@ import { createRoot } from 'react-dom/client'
 import { RouterProvider, createBrowserRouter } from 'react-router'
 import './index.css'
 import App from './App.jsx'
-import { Home, About, Account, Cart, Contact, Like, Shop, Blog } from './Pages/index.js';
-import BlogPreview from './components/Blog/BlogPreview.jsx'
+import { Home, About, Account, Cart, Contact, Like, Product, Blog } from './Pages/index.js';
 import BlogCategory from './components/Blog/BlogCategory.jsx'
 import AllBlog from './components/Blog/AllBlog.jsx'
 import SearchBlog from './components/Blog/SearchBlog.jsx'
 import SingleBlog from './components/Blog/SingleBlog.jsx'
+import AllProducts from './components/Products/AllProducts.jsx'
+import CategoriesPageProduct from './components/Products/CategoriesPageProduct.jsx'
+import SearchProducts from './components/Products/SearchProducts.jsx'
 
 const router = createBrowserRouter([
   {
@@ -34,6 +36,7 @@ const router = createBrowserRouter([
           {
             path: ":category",
             element: <BlogCategory/>,
+            // if user has filtered by category and then clicked on a blog,
             children:[
               {
                 path: "blog-dets/:id",
@@ -45,6 +48,7 @@ const router = createBrowserRouter([
             path: "search",
             element: <SearchBlog />
           },
+          // if user directly on main page clicked on blog
           {
             path: "blog-dets/:id",
             element: <SingleBlog />
@@ -68,15 +72,35 @@ const router = createBrowserRouter([
         element: <Like />
       },
       {
-        path: "/shop",
-        element: <Shop />
+        path: "/product",
+        element: <Product />,
+        children: [
+          {
+            path: "",
+            element: <AllProducts />    //this is default component
+          },
+          {
+            path: ':category',
+            element: <CategoriesPageProduct />,
+            children: [
+              {
+                path: 'product-dets/:id',
+                element: <SearchProducts />
+              }
+            ]
+          },
+          {
+            path: 'product-dets/:id',
+            element: <SearchProducts />
+          }
+        ]
       }
     ]
   }
 ])
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+  // <StrictMode>
     <RouterProvider router={router} />
-  </StrictMode>,
+  // </StrictMode>,
 )

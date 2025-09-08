@@ -30,7 +30,7 @@ const Navbar = () => {
                     <button className="uppercase hover:cursor-pointer hover:text-yellow-800">Home</button>
                 </NavLink>
                 <NavLink
-                    to="/shop"
+                    to="/product"
                     className={({ isActive }) => isActive ? "text-yellow-600" : ""}
                 >
                     <button className="uppercase hover:cursor-pointer hover:text-yellow-800">Shop</button>
