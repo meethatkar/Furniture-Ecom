@@ -4,9 +4,9 @@ import Account from "./Account";
 import Cart from "./Cart";
 import Contact from "./Contact";
 import Like from "./Like";
-import Shop from "./Shop";
+import Product from "./Product.jsx";
 import Blog from "./Blog";
 
-export {About, Account, Cart, Contact, Like, Shop, Home, Blog };
+export {About, Account, Cart, Contact, Like, Product, Home, Blog };
 
 

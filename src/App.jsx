@@ -9,12 +9,14 @@ function App() {
 
 
   return (
-    <>
+    <div className='flex flex-col min-h-screen'>
       <ScrollToTop /> {/* Render ScrollToTop here */}
       <Navbar />
-      <Outlet/>
+      <div className='flex-grow'>
+      <Outlet className=""/>
+      </div>
       <Footer />
-    </>
+    </div>
   )
 }
 
