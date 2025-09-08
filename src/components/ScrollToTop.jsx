@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
+  // whenever url changes it's scrolled to top.
 
   useEffect(() => {
     // "document.documentElement.scrollTo" is the modern IE-compatible way to scroll.
