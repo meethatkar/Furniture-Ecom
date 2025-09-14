@@ -3,6 +3,7 @@ import './App.css'
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop'; // Import the new component
+import {PaginationProvider}  from './Context/PaginationContext';
 
 function App() {
 
@@ -13,7 +14,9 @@ function App() {
       <ScrollToTop /> {/* Render ScrollToTop here */}
       <Navbar />
       <div className='flex-grow'>
-      <Outlet className=""/>
+      <PaginationProvider> 
+        <Outlet />
+      </PaginationProvider>
       </div>
       <Footer />
     </div>
