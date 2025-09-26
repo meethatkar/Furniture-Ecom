@@ -4,18 +4,22 @@ import { useProduct } from '../../Context/Products/ProductContext'
 import { usePagination } from '../../Context/PaginationContext';
 
 const AllProducts = () => {
-    const {products, categories, colors } = useProduct();
+    const {filteredProducts, categories, colors } = useProduct();
 
-    const { currentPage, perPage, offset, setPageCount, currentProducts,  setCurrentProducts} = usePagination();
+    const { currentPage, setCurrentPage, perPage, offset, setPageCount, currentProducts,  setCurrentProducts} = usePagination();
+
+    console.log(filteredProducts);
+    
 
     useEffect(() => {
-      setPageCount(Math.ceil(products.length / perPage));
-      setCurrentProducts(products.slice(offset, offset+perPage)); 
-    }, [perPage, currentPage])
-    
+      setPageCount(Math.ceil(filteredProducts.length / perPage));
+      setCurrentProducts(filteredProducts.slice(offset, offset+perPage)); 
+    }, [perPage, currentPage, filteredProducts]);
 
-    console.log(currentPage, perPage, offset, currentProducts);
-    
+    useEffect(()=>{
+      setCurrentPage(0);
+    }, [filteredProducts])
+
     
   return (
     <div>
