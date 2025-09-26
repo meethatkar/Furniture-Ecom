@@ -8,14 +8,6 @@ import { usePagination } from '../Context/PaginationContext';
 
 const Product = () => {
 
-  // const [perPage, setPerPage] = useState(6);
-  // const [currentPage, setCurrentPage] = useState(0);
-
-  // // Page count in PaginationBar only
-  //  const offset = currentPage * perPage;
-
-  // // getting products for that page, using slice.
-
   const {perPage, setPerPage, setCurrentPage, pageCount} = usePagination();
 
   return (
