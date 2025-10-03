@@ -1,12 +1,11 @@
 import React from 'react'
 import { useProduct } from '../../Context/Products/ProductContext';
 import { BetweenHorizonalEnd, Blocks } from 'lucide-react';
-import { usePagination } from '../../Context/PaginationContext';
 
 const ProductFilter = ({
   perPage, setPerPage, setCurrentPage
 }) => {
-  const { products } = useProduct();
+  const { filteredProducts } = useProduct();
 
 
   return (
@@ -26,7 +25,7 @@ const ProductFilter = ({
           </span>
         </div>
         <div className='h-6 w-px bg-gray-300'></div> {/* Divider */} 
-        <span className='text-gray-700'>Showing {perPage} of {products.length} results</span>
+        <span className='text-gray-700'>Showing {perPage} of {filteredProducts.length} results</span>
       </div>
 
       {/* Right section: Show and Sort By dropdowns */} 
@@ -49,7 +48,7 @@ const ProductFilter = ({
       </div>
 
           {/* SORING */}
-        <div className='flex items-center space-x-2'>
+        {/* <div className='flex items-center space-x-2'>
           <label htmlFor="sort-select" className='text-gray-700'>Sort By</label>
           <select id="sort-select" className='border border-gray-300 rounded-md p-2 bg-white'>
             <option value="default">Default sorting</option>
@@ -58,7 +57,7 @@ const ProductFilter = ({
             <option value="name-asc">Name: A-Z</option>
             <option value="name-desc">Name: Z-A</option>
           </select>
-        </div>
+        </div> */}
       </div>
   )
 }

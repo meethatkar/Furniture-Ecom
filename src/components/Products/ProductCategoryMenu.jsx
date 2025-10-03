@@ -3,10 +3,14 @@ import { useProduct } from '../../Context/Products/ProductContext'
 import { Search } from 'lucide-react';
 import { Link, NavLink } from 'react-router';
 
-const ProductCategory = ({ onFilterChange }) => {
-    const { products, categories, colors } = useProduct();
+const ProductCategory = ({ }) => {
+    const { products, categories, colors, setselectedCategory, selectedCategory } = useProduct();
     // console.log(products, categories, colors);
 
+    const [searchedKey, setsearchedKey] = useState("");
+    function getResult(searchedStr){
+        setselectedCategory([searchedStr, "search"]);
+    }
 
     return (
         <div className='w-full'>
@@ -19,8 +23,6 @@ const ProductCategory = ({ onFilterChange }) => {
                         className="w-full p-3 border border-gray-300 rounded-md pr-10"
                         onKeyDown={(e) => {
                             if (e.key === "Enter") {
-                                //   alert(e.target.value);
-                                // optional: prevent form submit
                                 e.preventDefault();
                                 setsearchedKey(e.target.value);
                                 getResult(e.target.value);
@@ -35,22 +37,21 @@ const ProductCategory = ({ onFilterChange }) => {
                 <h3 className="text-2xl font-bold mb-[2%]">Categories</h3>
                 <ul>
                     <li className="flex justify-between items-center py-2 border-b border-gray-200 last:border-b-0">
-                        <Link to={"/product"} className="text-gray-700 hover:underline hover:text-gray-800"> ALL </Link >
+                        <li onClick={()=>setselectedCategory("ALL")} className="text-gray-700 hover:underline hover:text-gray-800"> ALL </li >
                         <span className="text-gray-500 text-sm"> {products.length} </span>
                     </li>
                     {
                         categories.map((cat, index) => (
-                            <NavLink
+                            <li
                                 key={index}
-                                to={cat.name}
-                                className={({ isActive }) =>
-                                    `flex justify-between items-center py-2 border-b border-gray-200 last:border-b-0 ${isActive ? "bg-gray-100 font-semibold px-[1%]" : ""}`
-                                }
+                                // to={cat.name}
+                                onClick={()=>setselectedCategory(cat.name)}
+                                className="flex justify-between items-center py-2 border-b border-gray-200 last:border-b-0"
                             >
                                 <span className="text-gray-700 hover:underline hover:text-gray-800">{cat.name}</span>
                                 {/* LOGIC TO DISPALY PRODUCT COUNT */}
                                 <span className="text-gray-500 text-sm">{products.filter(pro => pro.category.includes(cat.name)).length}</span>
-                            </NavLink>
+                            </li>
                         ))
                     }
                 </ul>

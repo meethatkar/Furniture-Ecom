@@ -1,4 +1,4 @@
-import { createContext, useContext, useId, useState } from "react";
+import { createContext, useContext, useEffect, useId, useState } from "react";
 
 export const ProductContext = createContext();
 
@@ -164,12 +164,44 @@ export const ProductContextProvider = ({children})=>{
         { name: "Alice Blue", value: "#F0F8FF" }
     ];
 
-    
+    //NEW
+    const [selectedCategory, setselectedCategory] = useState("ALL");
+
+    const [filteredProducts, setfilteredProducts] = useState([]);
+
+    useEffect(() => {
+      if(!Array.isArray(selectedCategory)){
+          if (selectedCategory === 'ALL') {
+              setfilteredProducts(products);
+          }
+          else {
+              setfilteredProducts(
+                  products.filter((item) => (
+                      item.category.includes(selectedCategory)
+                  ))
+              )
+          }
+      }
+      else{
+        setfilteredProducts(
+            products.filter((item)=>{
+                const LC = item.category.map((i)=>i.toLowerCase());
+                return (LC.includes(selectedCategory[0].toLowerCase()) || item.product_name.toLowerCase().includes(selectedCategory[0].toLowerCase()))
+            })
+        );
+        console.log(filteredProducts);
+        
+      }
+    }, [selectedCategory, products])    
+
 
     const productValue = {
         products,
         categories,
         colors,
+        selectedCategory,
+        filteredProducts,
+        setselectedCategory
     }
 
     return (
