@@ -1,4 +1,4 @@
-import { StrictMode } from 'react'
+// import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { RouterProvider, createBrowserRouter } from 'react-router'
 import './index.css'
@@ -9,8 +9,6 @@ import AllBlog from './components/Blog/AllBlog.jsx'
 import SearchBlog from './components/Blog/SearchBlog.jsx'
 import SingleBlog from './components/Blog/SingleBlog.jsx'
 import AllProducts from './components/Products/AllProducts.jsx'
-import CategoriesPageProduct from './components/Products/CategoriesPageProduct.jsx'
-import SearchProducts from './components/Products/SearchProducts.jsx'
 
 const router = createBrowserRouter([
   {
@@ -79,20 +77,6 @@ const router = createBrowserRouter([
             path: "",
             element: <AllProducts />    //this is default component
           },
-          {
-            path: ':category',
-            element: <CategoriesPageProduct />,
-            children: [
-              {
-                path: 'product-dets/:id',
-                element: <SearchProducts />
-              }
-            ]
-          },
-          {
-            path: 'product-dets/:id',
-            element: <SearchProducts />
-          }
         ]
       }
     ]

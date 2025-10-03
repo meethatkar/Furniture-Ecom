@@ -170,18 +170,29 @@ export const ProductContextProvider = ({children})=>{
     const [filteredProducts, setfilteredProducts] = useState([]);
 
     useEffect(() => {
-      if(selectedCategory==='ALL'){
-        setfilteredProducts(products);
+      if(!Array.isArray(selectedCategory)){
+          if (selectedCategory === 'ALL') {
+              setfilteredProducts(products);
+          }
+          else {
+              setfilteredProducts(
+                  products.filter((item) => (
+                      item.category.includes(selectedCategory)
+                  ))
+              )
+          }
       }
       else{
         setfilteredProducts(
-            products.filter((item)=>(
-                item.category.includes(selectedCategory)
-            ))
-        )
+            products.filter((item)=>{
+                const LC = item.category.map((i)=>i.toLowerCase());
+                return (LC.includes(selectedCategory[0].toLowerCase()) || item.product_name.toLowerCase().includes(selectedCategory[0].toLowerCase()))
+            })
+        );
+        console.log(filteredProducts);
+        
       }
-    }, [selectedCategory, products])
-    
+    }, [selectedCategory, products])    
 
 
     const productValue = {

@@ -7,6 +7,11 @@ const ProductCategory = ({ }) => {
     const { products, categories, colors, setselectedCategory, selectedCategory } = useProduct();
     // console.log(products, categories, colors);
 
+    const [searchedKey, setsearchedKey] = useState("");
+    function getResult(searchedStr){
+        setselectedCategory([searchedStr, "search"]);
+    }
+
     return (
         <div className='w-full'>
             {/* Search Bar */}
@@ -18,8 +23,6 @@ const ProductCategory = ({ }) => {
                         className="w-full p-3 border border-gray-300 rounded-md pr-10"
                         onKeyDown={(e) => {
                             if (e.key === "Enter") {
-                                //   alert(e.target.value);
-                                // optional: prevent form submit
                                 e.preventDefault();
                                 setsearchedKey(e.target.value);
                                 getResult(e.target.value);

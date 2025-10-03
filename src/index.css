@@ -24,6 +24,57 @@ body::-webkit-scrollbar{
   }
 }
 
-#sec-1-1 img {
+@keyframes -rotate360 {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+#sec-1-1 img, #abt-img1 {
   animation: rotate360 10s linear infinite;
+}
+
+#abt-img2{
+  animation: -rotate360 10s linear infinite;
+}
+
+#feature-headings{
+  /* -webkit-text-stroke: 0.5px black; */
+  text-shadow: 0 4px 12px rgba(0,0,0,0.25), 0 1.5px 0 #222, 0 0.5px 0 #fff;
+}
+
+#head-stroke{
+  -webkit-text-stroke: 3px rgba(0, 0, 0, 0.692);
+}
+
+@keyframes slider-move {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-245%);
+  }
+}
+
+.main-slider {
+  animation: slider-move 30s linear infinite;
+  will-change: transform;
+}
+
+.company-block {
+  animation: company-slide-in 1s cubic-bezier(0.77,0,0.175,1) both;
+}
+
+@keyframes company-slide-in {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }

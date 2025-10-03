@@ -22,7 +22,7 @@ const Navbar = () => {
             </div>
 
             {/* Section 2: Navigation Buttons (hidden on mobile, flex on md and up) */}
-            <div className="hidden md:flex items-center gap-[10%] text-[1.1vw] font-medium">
+            <div className="hidden md:flex items-center gap-[10%] text-[1.1vw] font-medium translate-x-[15%]">
                 <NavLink
                     to="/"
                     className={({ isActive }) => isActive ? "text-yellow-600" : ""}
