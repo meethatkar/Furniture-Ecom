@@ -21,7 +21,7 @@ const Features = () => {
     },
   ]
   return (
-    <div className='flex md:flex-row flex-col items-center justify-center gap-[5%] px-[5vw] py-[5%] bg-[#FCF6F2] '>
+    <div className='flex md:flex-row flex-col items-center justify-center gap-[5%] px-[5vw] py-[5%] bg-[#FCF6F2] -mb-[5%]'>
       {data.map((single_data,index)=>(
         <div className="feature-dets w-full md:w-4/12 flex md:flex-row flex-col items-center md:items-start gap-[5%]" key={index}>
           {single_data.icon_tag}

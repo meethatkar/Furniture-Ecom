@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router'
 
 const About = () => {
 
@@ -107,7 +108,7 @@ const About = () => {
   ]
 
   return (
-    <div className='text-center px-[5vw] font-Inter border-t-2 border-t-gray-200 border-dotted flex flex-col'>
+  <div className='text-center px-[5vw] font-Inter border-t-2 border-t-gray-200 border-dotted flex flex-col'>
       {/* INTRO */}
       <div id="intro" className='h-screen flex flex-col justify-center items-center -mt-[3vw]'>
         <span className='mx-auto w-fit flex gap-[5%] items-center -translate-x-[5%]'>
@@ -136,11 +137,10 @@ const About = () => {
       </div>
       {/* FEATURES */}
       <div id="features" className='mb-[13%]'>
-        <h2 className='text-[3vw] font-normal text-gray-800 mb-[3%] border-b-4 leading-none w-fit mx-auto'> | What Makes Us Different | </h2>
-        <div id="cards" className="w-full flex items-stretch justify-between gap-[5%] px-[5vw]">
+        <h2 className='text-[3vw] font-normal text-gray-800 mb-[1%]'> | What Makes Us Different | </h2>
+        <div id="cards" className="w-full flex items-stretch justify-between gap-[5%] px-[5vw]"> 
           {featuresData.map((item, i) => (
             <div className="card w-4/12 flex-1 rounded-xl group hover:bg-gray-100 hover:rotate-y-20 hover:rotate-x-10 hover:-rotate-z-1 transition-all ease overflow-hidden relative shadow-lg hover:shadow-2xl" key={i}>
-              {/* <h1> afd </h1> */}
               <img src={item.img_url} alt="" className='object-cover w-full h-full group-hover:opacity-0 transition-all ease duration-300' />
               <h4 id="feature-headings" className='absolute z-5 text-5xl font-semibold top-10/12 left-1/2 -translate-1/2 group-hover:opacity-0 transition-all ease duration-300 text-white'> {item.feature_heading} </h4>
               <p className="p-6 text-3xl font-semibold opacity-0 absolute top-1/2 -translate-y-1/2 inset-0 h-fit w-fit pointer-events-none group-hover:opacity-100 transition-all ease duration-300"> {item.subHeading}
@@ -154,7 +154,7 @@ const About = () => {
       </div>
       {/* REVIEWS */}
       <div id="customer-reviews" className='min-h-screen w-screen relative'>
-        <h2 className='text-6xl font-normal mb-[3%] border-b-4 leading-none w-fit mx-auto'> | What Our Customers Say | </h2>
+        <h2 className='text-6xl font-normal mb-[2%]'> | What Our Customers Say | </h2>
         {
           customer_reviews.map((review, i) => (
             <div className={`review-cards p-6 border-2 h-fit w-3/12 relative shadow-md border-gray-500 ${review.cssClass} ${i % 2 == 0 ? "rounded-tr-2xl rounded-bl-2xl" : "rounded-tl-2xl rounded-br-2xl"}`}>
@@ -177,35 +177,24 @@ const About = () => {
         }
       </div>
       {/* ECOM LISTING */}
-      <div id="ecom-listing" className="my-[20vh] ">
-        <h2 className="text-[3vw] font-normal text-gray-800 mb-[3%] w-fit mx-auto border-b-4 leading-none"> | Also Available On |</h2>
-        <div id="logo-wrapper" className='w-screen h-[16vh] flex relative'>
-          <div id="blur-1" className='w-5/12 h-full bg-gradient-to-r from-white to-transparent absolute top-0 -left-[5%] translate-y-[10%] z-5'></div>
-          <div id="blur-2" className='w-5/12 h-full bg-gradient-to-l from-white to-transparent absolute top-0 right-[0%] translate-y-[10%] z-5'></div>
-          <div className="main-slider w-full h-full flex items-center gap-[8%] -translate-x-[10%] shrink-0">
-          {ecom_list.map((item, i) => (
+      <div id="ecom-listing" className='my-[10vh] relative w-screen px-[5vw] h-[15vh]'>
+        <div id="main-slider" className='w-full h-full flex items-center gap-[8%] -translate-x-[10%]'>
+          { ecom_list.map((item, i)=>(
             <div className="company-block w-2/12 h-full shrink-0">
-              <img src={item.logo} alt="" className={`h-full w-full object-cover ${i === 0 ? "translate-y-[13%]" : ""}`} />
+              <img src={item.logo} alt="" className={`h-full w-full object-cover ${i===0 ? "translate-y-[20%]":''}`}/>
             </div>
           ))}
-        </div>
-        <div className="main-slider w-full h-full flex items-center gap-[8%] translate-x-[135%] shrink-0">
-          {ecom_list.map((item, i) => (
-            <div className="company-block w-2/12 h-full shrink-0">
-              <img src={item.logo} alt="" className={`h-full w-full object-cover ${i === 0 ? "translate-y-[20%]" : ""}`} />
-            </div>
-          ))}
-        </div>
         </div>
       </div>
       {/* CONTACT US LINK */}
-      <div id="closing" className='w-screen flex items-center gap-[10%] pr-[5vw] mb-[10vh]'>
-        <div id="img-div" className='w-1/2 rounded-2xl overflow-hidden'>
-          <img src="https://imgs.search.brave.com/58H-jHdUsdLw2QrMkwW38iV3OdZDa8MIBdFE8OoDHtU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzAwLzcwLzIxLzgx/LzM2MF9GXzcwMjE4/MTI3XzNiM3pyOGt6/V01rZ0l0eWFFR0xU/dUNLaVA5bVNhT3FU/LmpwZw" alt="" className='w-full scale-130 object-cover'/>
+      <div id="closing" className='w-full md:w-screen flex flex-col md:flex-row items-center gap-6 md:gap-[10%] pr-0 md:pr-[10vw] mb-10 md:mb-[10vh]'>
+        <div id="img-div" className='w-full md:flex-1 shrink-0 md:w-1/2 rounded-2xl overflow-hidden mb-4 md:mb-0'>
+          <Link to="/Contact"> <img src="/doubts_ask.png" alt="" className='w-full object-cover'/> </Link>
         </div>
-        <div id="text">
-          <h4> We’re Here to Help </h4>
-          <p> Have questions about our products, orders, or services? Simply click the link below to reach our support team and get quick answers to all your queries. </p>
+        <div id="text" className='w-full md:flex-1 shrink-0 md:w-1/2'>
+          <Link to="/Contact"> <h2 className="text-lg md:text-[3vw] font-normal text-gray-800 mb-4 md:mb-[3%] w-fit mx-auto border-b-4 leading-none"> | We are Here too Help |</h2> </Link>
+          <p className='text-sm md:text-[1.2vw] text-black/50'> Have questions about our products, orders, or services? Simply click the link below to reach our support team and get quick answers to all your queries. </p>
+          <Link to="/Contact" className='underline text-base md:text-[1.5vw] text-blue-500 font-medium'> Ask Doubts Here </Link>
         </div>
       </div>
     </div>

@@ -8,8 +8,6 @@ const AllProducts = () => {
 
   const { currentPage, setCurrentPage, perPage, offset, setPageCount, currentProducts, setCurrentProducts } = usePagination();
 
-  // console.log(filteredProducts);
-
 
   useEffect(() => {
     setPageCount(Math.ceil(filteredProducts.length / perPage));

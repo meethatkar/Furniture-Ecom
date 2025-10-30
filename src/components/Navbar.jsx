@@ -1,6 +1,8 @@
 import { Heart, Menu, Search, ShoppingCart, User, X } from "lucide-react";
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router";
+import { useWishlist } from "../Context/Shopping/Wishlist"
+import { useCart } from "../Context/Shopping/Cart";
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -8,6 +10,9 @@ const Navbar = () => {
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
+
+    const wishlistContextObj = useWishlist();
+    const {cartProductCount} = useCart();
 
     return (
         <nav className="w-full px-[5vw] py-[2vh] bg-transparent relative z-10 flex items-center justify-between font-Inter">
@@ -17,7 +22,7 @@ const Navbar = () => {
             {/* Hamburger menu for mobile */}
             <div className="md:hidden">
                 <button onClick={toggleMenu} className="focus:outline-none">
-                    {isMenuOpen ? <X size={24} className="relative z-10"/> : <Menu size={24} />}
+                    {isMenuOpen ? <X size={24} className="relative z-10" /> : <Menu size={24} />}
                 </button>
             </div>
 
@@ -57,10 +62,19 @@ const Navbar = () => {
 
             {/* Section 3: User Profile, Search, Like, Cart (hidden on mobile, flex on md and up) */}
             <div className="hidden md:flex items-center gap-[8%] w-3/12 justify-end">
-                <NavLink to="/account" className={({isActive}) => (isActive ? "text-yellow-600" : "")}><User /></NavLink>
-                <NavLink to="#" className={({isActive})=>(isActive ? "text-yellow-600" : "")}><Search /></NavLink>
-                <NavLink to="/like" className={({isActive})=>(isActive?"text-yellow-600":"")}><Heart /></NavLink>
-                <NavLink to="/cart" className={({isActive})=>(isActive?"text-yellow-600":"")}><ShoppingCart /></NavLink>
+                <NavLink to="/account" className={({ isActive }) => (isActive ? "text-yellow-600" : "")}><User /></NavLink>
+                <NavLink to="#" className={({ isActive }) => (isActive ? "text-yellow-600" : "")}><Search /></NavLink>
+                <NavLink to="/like" className={({ isActive }) => `${isActive ? "text-yellow-600" : ""} relative`}>
+                    <Heart />
+                    <span className="absolute -top-[50%] -right-[40%] font-semibold bg-yellow-600/80 px-1 rounded-full text-white scale-85">{wishlistContextObj.wishlistCount}
+                    </span>
+                </NavLink>
+                <NavLink to="/cart" className={({ isActive }) => `${isActive ? "text-yellow-600" : ""} relative`}>
+                    <ShoppingCart />
+                    <span className="absolute -top-[60%] -right-[30%] bg-yellow-600/80 text-white font-semibold rounded-full px-1 scale-85 ">
+                        {cartProductCount}
+                    </span>
+                </NavLink>
             </div>
 
             {/* Mobile Menu Overlay */}
@@ -74,7 +88,7 @@ const Navbar = () => {
                         <button className="uppercase text-lg hover:text-yellow-800">Home</button>
                     </NavLink>
                     <NavLink
-                        to="/shop"
+                        to="/Product"
                         className={({ isActive }) => isActive ? "text-yellow-600" : ""}
                         onClick={toggleMenu}            //click pe menu close hoga.
                     >
@@ -87,9 +101,9 @@ const Navbar = () => {
                     >
                         <button className="uppercase text-lg hover:text-yellow-800">About</button>
                     </NavLink>
-                    <NavLink 
+                    <NavLink
                         to="/blog"
-                        className={({isActive}) => (isActive ? "text-yellow-600": "")}
+                        className={({ isActive }) => (isActive ? "text-yellow-600" : "")}
                         onClick={toggleMenu}
                     >
                         <button className="uppercase text-lg hover:text-yellow-600"> Blog </button>
@@ -102,10 +116,10 @@ const Navbar = () => {
                         <button className="uppercase text-lg hover:text-yellow-800">Contact</button>
                     </NavLink>
                     <div className="flex items-center gap-6 mt-4">
-                        <NavLink to="/account" className={({isActive}) => (isActive ? "text-yellow-600" : "")} onClick={toggleMenu}><User size={24} /></NavLink>
-                        <NavLink to="#" className={({isActive})=>(isActive ? "text-yellow-600" : "")} onClick={toggleMenu}><Search size={24} /></NavLink>
-                        <NavLink to="/like" className={({isActive})=>(isActive?"text-yellow-600":"")} onClick={toggleMenu}><Heart size={24} /></NavLink>
-                        <NavLink to="/cart" className={({isActive})=>(isActive?"text-yellow-600":"")} onClick={toggleMenu}><ShoppingCart size={24} /></NavLink>
+                        <NavLink to="/account" className={({ isActive }) => (isActive ? "text-yellow-600" : "")} onClick={toggleMenu}><User size={24} /></NavLink>
+                        <NavLink to="#" className={({ isActive }) => (isActive ? "text-yellow-600" : "")} onClick={toggleMenu}><Search size={24} /></NavLink>
+                        <NavLink to="/like" className={({ isActive }) => (isActive ? "text-yellow-600" : "")} onClick={toggleMenu}><Heart size={24} /></NavLink>
+                        <NavLink to="/cart" className={({ isActive }) => (isActive ? "text-yellow-600" : "")} onClick={toggleMenu}><ShoppingCart size={24} /></NavLink>
                     </div>
                 </div>
             )}

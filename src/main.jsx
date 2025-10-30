@@ -9,6 +9,7 @@ import AllBlog from './components/Blog/AllBlog.jsx'
 import SearchBlog from './components/Blog/SearchBlog.jsx'
 import SingleBlog from './components/Blog/SingleBlog.jsx'
 import AllProducts from './components/Products/AllProducts.jsx'
+import ViewSingleProduct from './Pages/ViewSingleProduct.jsx';
 
 const router = createBrowserRouter([
   {
@@ -78,6 +79,10 @@ const router = createBrowserRouter([
             element: <AllProducts />    //this is default component
           },
         ]
+      },
+      {
+        path:"/product/:slug",
+        element: <ViewSingleProduct />
       }
     ]
   }
