@@ -9,11 +9,12 @@ const ProductCategory = ({ }) => {
 
     const [searchedKey, setsearchedKey] = useState("");
     function getResult(searchedStr){
-        setselectedCategory([searchedStr, "search"]);
+        setselectedCategory([searchedStr, "search"]);       
+        //done like this so in useEffect of product context it will filter based on search when it's array.
     }
 
     return (
-        <div className='w-full'>
+        <div className='w-full sticky top-10 shadow-md px-4 py-2'>
             {/* Search Bar */}
             <div className="relative mb-[5%]">
                 <form>

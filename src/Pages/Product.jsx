@@ -14,7 +14,7 @@ const Product = () => {
 
   return (
     <ProductContextProvider>
-      <div className='px-[5vw] w-screen font-sans flex justify-between my-[2%]'>
+      <div className='px-[5vw] w-screen font-sans flex justify-between my-[2%] relative'>
         <div id="product-left" className='w-full md:w-[70%] flex flex-col gap-[5%]'>
           <div id="filter-sec" className='w-full hidden md:block'>
             <ProductFilter perPage={perPage} setPerPage={setPerPage} setCurrentPage={setCurrentPage} />
@@ -41,7 +41,7 @@ const Product = () => {
             <PaginationBar setCurrentPage={setCurrentPage} pageCount={pageCount} />
           </div>
         </div>
-        <div className='w-[25%] hidden md:block'>
+        <div className='w-[25%] hidden md:block sticky top-[10%]'>
           <ProductCategory />
         </div>
       </div>
