@@ -1,8 +1,17 @@
 import React from 'react'
+import { useWishlist } from '../Context/Shopping/Wishlist'
+import ProductList from '../components/Wishlist/ProductList';
 
 const Like = () => {
+  const {wishlistProductList, removeProduct} = useWishlist();
   return (
-    <div>Like</div>
+    <div className='px-[5vw] py-[2%]'>
+      {wishlistProductList.map((product)=>(
+        <React.Fragment key={product.id}>
+          <ProductList product={product}/>
+        </React.Fragment>
+      ))}
+    </div>
   )
 }
 

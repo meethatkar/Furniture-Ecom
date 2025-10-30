@@ -12,21 +12,6 @@ export const BlogContextProvider = ({ children }) => {
     // BLOG
     const [blog, setBlog] = useState([
         {
-            title: "Lighting tips for cozy evenings",
-            previewDesc: "Create a warm, inviting atmosphere in your home with our expert lighting tips. Learn how to layer different light sources, such as floor lamps, table lamps, and candles, to set the perfect mood for relaxing evenings. Discover how adjusting brightness and color temperature can transform any room into a peaceful retreat where you can unwind after a long day.",
-            desc: (
-                <p className="text-[1.1vmax] text-black/50">
-                    Lighting plays a pivotal role in transforming a house into a home, especially as evening approaches. To craft a truly cozy and comfortable atmosphere, it’s essential to think beyond a single overhead light source. Start by layering different types of illumination: ambient, accent, and task lighting. Ambient light, often from ceiling fixtures or soft floor lamps, provides overall brightness, setting a foundational glow for your space.<br /><br />
-                    Once your ambient layer is established, introduce accent lighting to highlight specific features or architectural details. This could be achieved with spotlights on artwork, or dimmable strip lights under shelves. Task lighting, such as table lamps beside your sofa or a reading nook, provides focused light for activities like reading or knitting, preventing eye strain and adding functional charm. For ultimate coziness, integrate candles or a fireplace for a flickering, warm glow that instantly calms the senses and promotes relaxation. These smaller, softer sources create pockets of intimacy within a larger room.<br /><br />
-                    Experiment with the brightness and color temperature of your lights to further enhance the mood. Warmer, softer lights (lower Kelvin temperatures) evoke a sense of comfort and tranquility, ideal for unwinding. Incorporate smart bulbs and dimmers to easily adjust the intensity and hue, allowing you to seamlessly transition your room's ambiance from a bright, energetic daytime feel to a serene, intimate evening retreat. Thoughtful lighting choices are transformative, bringing both beauty and profound comfort to your everyday life.
-                </p>
-            ),
-            date: "July 3 2021",
-            category: "Interior",
-            img_src: "https://www.sunmory.com/cdn/shop/articles/Interior-of-living-room-with-sofa-floor-lamp-and-glowing-lamps-in-evening.webp?v=1727075986&width=1400",
-            id: useId()
-        },
-        {
             title: "Modern minimalist lamp design",
             previewDesc: "Explore our new minimalist lamp collection, designed to bring simple elegance and modern style to any home. Each lamp is thoughtfully crafted with clean lines and a focus on functionality, making them perfect for those who appreciate understated beauty. Illuminate your living spaces with soft, ambient lighting that enhances comfort and complements any decor, while enjoying the timeless appeal of minimalist design.",
             desc: (
@@ -69,6 +54,21 @@ export const BlogContextProvider = ({ children }) => {
             date: "February 2 2021",
             category: "Interior",
             img_src: "https://www.homesindiamagazine.com/uploaded_images/newstransfer/ze77Hexagone%20Classic%20Vert%20Rug%20(1).jpg",
+            id: useId()
+        },
+        {
+            title: "Lighting tips for cozy evenings",
+            previewDesc: "Create a warm, inviting atmosphere in your home with our expert lighting tips. Learn how to layer different light sources, such as floor lamps, table lamps, and candles, to set the perfect mood for relaxing evenings. Discover how adjusting brightness and color temperature can transform any room into a peaceful retreat where you can unwind after a long day.",
+            desc: (
+                <p className="text-[1.1vmax] text-black/50">
+                    Lighting plays a pivotal role in transforming a house into a home, especially as evening approaches. To craft a truly cozy and comfortable atmosphere, it’s essential to think beyond a single overhead light source. Start by layering different types of illumination: ambient, accent, and task lighting. Ambient light, often from ceiling fixtures or soft floor lamps, provides overall brightness, setting a foundational glow for your space.<br /><br />
+                    Once your ambient layer is established, introduce accent lighting to highlight specific features or architectural details. This could be achieved with spotlights on artwork, or dimmable strip lights under shelves. Task lighting, such as table lamps beside your sofa or a reading nook, provides focused light for activities like reading or knitting, preventing eye strain and adding functional charm. For ultimate coziness, integrate candles or a fireplace for a flickering, warm glow that instantly calms the senses and promotes relaxation. These smaller, softer sources create pockets of intimacy within a larger room.<br /><br />
+                    Experiment with the brightness and color temperature of your lights to further enhance the mood. Warmer, softer lights (lower Kelvin temperatures) evoke a sense of comfort and tranquility, ideal for unwinding. Incorporate smart bulbs and dimmers to easily adjust the intensity and hue, allowing you to seamlessly transition your room's ambiance from a bright, energetic daytime feel to a serene, intimate evening retreat. Thoughtful lighting choices are transformative, bringing both beauty and profound comfort to your everyday life.
+                </p>
+            ),
+            date: "July 3 2021",
+            category: "Interior",
+            img_src: "https://www.sunmory.com/cdn/shop/articles/Interior-of-living-room-with-sofa-floor-lamp-and-glowing-lamps-in-evening.webp?v=1727075986&width=1400",
             id: useId()
         },
         {

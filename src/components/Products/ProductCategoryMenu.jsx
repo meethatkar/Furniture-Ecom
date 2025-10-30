@@ -37,8 +37,8 @@ const ProductCategory = ({ }) => {
                 <h3 className="text-2xl font-bold mb-[2%]">Categories</h3>
                 <ul>
                     <li className="flex justify-between items-center py-2 border-b border-gray-200 last:border-b-0">
-                        <li onClick={()=>setselectedCategory("ALL")} className="text-gray-700 hover:underline hover:text-gray-800"> ALL </li >
-                        <span className="text-gray-500 text-sm"> {products.length} </span>
+                        <span  onClick={()=>setselectedCategory("ALL")} className="text-gray-700 hover:underline hover:text-gray-800 hover:cursor-pointer"> ALL </span >
+                        <span className="text-gray-500 text-sm hover:cursor-pointer"> {products.length} </span>
                     </li>
                     {
                         categories.map((cat, index) => (

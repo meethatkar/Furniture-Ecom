@@ -3,7 +3,7 @@ import { FaFacebookF, FaInstagram, FaPinterestP, FaTiktok, FaTwitter } from 'rea
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-400 py-10 px-[5vw] mt-[5vmin]">
+    <footer className="bg-slate-100 py-10 px-[5vw] mt-[5vmin]">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Section 1: Logo and Address */}
         <div>

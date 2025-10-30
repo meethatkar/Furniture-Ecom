@@ -14,7 +14,7 @@ const BlogOverview = () => {
     }
 
     return (
-        <div className="w-full">
+        <div className="w-full sticky top-10 border-[1px] border-gray-300 p-4 rounded-sm shadow-md">
             {/* Search Bar */}
             <div className="relative mb-10">
                 <form>
