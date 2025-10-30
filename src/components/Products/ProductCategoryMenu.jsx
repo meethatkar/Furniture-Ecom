@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useProduct } from '../../Context/Products/ProductContext'
 import { Search } from 'lucide-react';
-import { Link, NavLink } from 'react-router';
 
 const ProductCategory = ({ }) => {
     const { products, categories, colors, setselectedCategory, selectedCategory } = useProduct();
@@ -9,11 +8,12 @@ const ProductCategory = ({ }) => {
 
     const [searchedKey, setsearchedKey] = useState("");
     function getResult(searchedStr){
-        setselectedCategory([searchedStr, "search"]);
+        setselectedCategory([searchedStr, "search"]);       
+        //done like this so in useEffect of product context it will filter based on search when it's array.
     }
 
     return (
-        <div className='w-full'>
+        <div className='w-full sticky top-10 shadow-md px-4 py-2'>
             {/* Search Bar */}
             <div className="relative mb-[5%]">
                 <form>

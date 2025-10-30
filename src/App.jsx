@@ -6,6 +6,7 @@ import ScrollToTop from './components/ScrollToTop'; // Import the new component
 import { PaginationProvider } from './Context/PaginationContext';
 import { WishlistContextProvider } from './Context/Shopping/Wishlist';
 import { CartContextProvider } from './Context/Shopping/Cart';
+import { ProductContextProvider } from './Context/Products/ProductContext';
 
 function App() {
 
@@ -16,12 +17,14 @@ function App() {
       <ScrollToTop /> {/* Render ScrollToTop here */}
       <WishlistContextProvider>
         <CartContextProvider>
-          <Navbar />
-          <div className='flex-grow'>
-            <PaginationProvider>
-              <Outlet />
-            </PaginationProvider>
-          </div>
+          <ProductContextProvider>
+            <Navbar />
+            <div className='flex-grow'>
+              <PaginationProvider>
+                <Outlet />
+              </PaginationProvider>
+            </div>
+          </ProductContextProvider>
         </CartContextProvider>
       </WishlistContextProvider>
       <Footer />

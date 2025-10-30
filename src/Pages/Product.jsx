@@ -13,7 +13,6 @@ const Product = () => {
   const [showCategory, setShowCategory] = useState(false);
 
   return (
-    <ProductContextProvider>
       <div className='px-[5vw] w-screen font-sans flex justify-between my-[2%]'>
         <div id="product-left" className='w-full md:w-[70%] flex flex-col gap-[5%]'>
           <div id="filter-sec" className='w-full hidden md:block'>
@@ -45,7 +44,6 @@ const Product = () => {
           <ProductCategory />
         </div>
       </div>
-    </ProductContextProvider>
   );
 };
 
