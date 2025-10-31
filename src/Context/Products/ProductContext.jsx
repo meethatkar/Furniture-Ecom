@@ -11,7 +11,7 @@ export const ProductContextProvider = ({ children }) => {
         {
             product_img: "https://demothemedh.b-cdn.net/kosi/wp-content/uploads/2021/08/Product-IMG-14-500x591.jpg",
             product_name: "Afterroom Coat Hanger",
-            product_price: "$126.06",
+            product_price: 126.06,
             category: ["Furnitures"],
             clr_arr: ["#E8E7CF", "#767676", "#d9eceb"],
             id: useId(),
@@ -28,7 +28,7 @@ export const ProductContextProvider = ({ children }) => {
         {
             product_img: "https://demothemedh.b-cdn.net/kosi/wp-content/uploads/2021/08/Product-IMG-30-500x591.jpg",
             product_name: "Bobber Minilistic Small Clock",
-            product_price: "$120.05",
+            product_price: 120.05,
             category: ["Decor"],
             clr_arr: ["#767676", "#E8D1AB", "#eae9d2"],
             id: useId(),
@@ -45,7 +45,7 @@ export const ProductContextProvider = ({ children }) => {
         {
             product_img: "https://demothemedh.b-cdn.net/kosi/wp-content/uploads/2021/08/Product-IMG-500x591.jpg",
             product_name: "Afteroom Coat Hanger",
-            product_price: "$183.76",
+            product_price: 183.76,
             category: ["Chairs"],
             clr_arr: ["#E8E7CF", "#767676", "#ededed", "#d9eceb"],
             id: useId(),
@@ -62,7 +62,7 @@ export const ProductContextProvider = ({ children }) => {
         {
             product_img: "https://demothemedh.b-cdn.net/kosi/wp-content/uploads/2021/08/Product-IMG-31-500x591.jpg",
             product_name: "Afteroom Dining Chair",
-            product_price: "$102.84",
+            product_price: 102.84,
             category: ["Chairs"],
             clr_arr: [
                 "#eae9d2", "#757575", "#ededed", "#d9eceb"
@@ -81,7 +81,7 @@ export const ProductContextProvider = ({ children }) => {
         {
             product_img: "https://demothemedh.b-cdn.net/kosi/wp-content/uploads/2021/08/Product-IMG-29-500x591.jpg",
             product_name: "Bobber Table Lamp",
-            product_price: "$165.58",
+            product_price: 165.58,
             category: ["Lighting"],
             clr_arr: [
                 "#7a7a7a", "#ededed", "#eddcbb", "#d8d1e7", "#d3dbe8"
@@ -100,7 +100,7 @@ export const ProductContextProvider = ({ children }) => {
         {
             product_img: "https://demothemedh.b-cdn.net/kosi/wp-content/uploads/2021/08/Product-IMG-22-500x591.jpg",
             product_name: "Cast Sconce Wall Lamp",
-            product_price: "$123.43",
+            product_price: 123.43,
             category: ["Lighting", "Decor"],
             clr_arr: [
                 "#7a7a7a", "#ededed", "#eddcbb", "#d9eceb"
@@ -119,7 +119,7 @@ export const ProductContextProvider = ({ children }) => {
         {
             product_img: "https://demothemedh.b-cdn.net/kosi/wp-content/uploads/2021/08/Product-IMG-24-500x591.jpg",
             product_name: "Circular Wooded Jar",
-            product_price: "$129.48",
+            product_price: 129.48,
             category: ["Decor"],
             clr_arr: ["#FCF6F2", "#E8D1AB", "#757575"],
             id: useId(),
@@ -136,7 +136,7 @@ export const ProductContextProvider = ({ children }) => {
         {
             product_img: "https://demothemedh.b-cdn.net/kosi/wp-content/uploads/2021/08/Product-IMG-27-500x591.jpg",
             product_name: "Cast Sconce Chair",
-            product_price: "$103.89",
+            product_price: 103.89,
             category: ["Chairs", "Furnitures"],
             clr_arr: ["#7a7a7a", "#DDEEEB", "#767676"],
             id: useId(),
@@ -153,7 +153,7 @@ export const ProductContextProvider = ({ children }) => {
         {
             product_img: "https://demothemedh.b-cdn.net/kosi/wp-content/uploads/2021/08/Product-IMG-26-500x591.jpg",
             product_name: "Circula Coffee Table",
-            product_price: "$155.66",
+            product_price: 155.66,
             category: ["Decor", "Furnitures"],
             clr_arr: ["#eae9d2", "#757575", "#d9eceb"],
             id: useId(),
@@ -170,7 +170,7 @@ export const ProductContextProvider = ({ children }) => {
         {
             product_img: "https://demothemedh.b-cdn.net/kosi/wp-content/uploads/2021/08/Product-IMG-25-500x591.jpg",
             product_name: "Super Comfortable Bean Bag",
-            product_price: "$179.99",
+            product_price: 179.99,
             category: ["Uncategorized"],
             clr_arr: ["#EEEEEE", "#DDEEEB", "#7a7a7a"],
             id: useId(),
@@ -187,7 +187,7 @@ export const ProductContextProvider = ({ children }) => {
         {
             product_img: "https://demothemedh.b-cdn.net/kosi/wp-content/uploads/2021/08/Product-IMG-23-500x591.jpg",
             product_name: "Adjustable Mini Table",
-            product_price: "$124.08",
+            product_price: 124.08,
             category: ["Decor", "Furnitures"],
             clr_arr: ["#767676", "#E8D1AB", "#DDEEEB"],
             id: useId(),
@@ -204,7 +204,7 @@ export const ProductContextProvider = ({ children }) => {
         {
             product_img: "https://demothemedh.b-cdn.net/kosi/wp-content/uploads/2021/08/Product-IMG-22-500x591.jpg",
             product_name: "JWDA Table Lamp",
-            product_price: "$123.34",
+            product_price: 123.34,
             category: ["Lighting"],
             clr_arr: ["#7a7a7a", "#D4E8CF", "EEEEEE"],
             id: useId(),
@@ -221,7 +221,7 @@ export const ProductContextProvider = ({ children }) => {
         {
             product_img: "https://demothemedh.b-cdn.net/kosi/wp-content/uploads/2021/08/Product-IMG-21-500x591.jpg",
             product_name: "Norm Stone Lamp",
-            product_price: "$102.32",
+            product_price: 102.32,
             category: ["Lighting"],
             clr_arr: ["#FCF6F2", "#D8CFE8", "767676"],
             id: useId(),

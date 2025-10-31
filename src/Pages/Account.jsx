@@ -39,7 +39,7 @@ const Account = () => {
     // check if already exist or not using .some or .find
     if (!tempData.some((e) => e.email === userObj.email)) {
       tempData.push(userObj);
-      setUser(tempData);
+      setUser(userObj);
       setData(tempData);
       setUserLogin(true);
       setIsLoggedIn(true);
