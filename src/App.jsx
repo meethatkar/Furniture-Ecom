@@ -7,6 +7,7 @@ import { PaginationProvider } from './Context/PaginationContext';
 import { WishlistContextProvider } from './Context/Shopping/Wishlist';
 import { CartContextProvider } from './Context/Shopping/Cart';
 import UserAuthProvider from './Context/UserAuth/UserAuth';
+import { ProductContextProvider } from './Context/Products/ProductContext';
 
 function App() {
 
@@ -18,12 +19,14 @@ function App() {
       <UserAuthProvider>
         <WishlistContextProvider>
           <CartContextProvider>
-            <Navbar />
-            <div className='flex-grow'>
-              <PaginationProvider>
-                <Outlet />
-              </PaginationProvider>
-            </div>
+            <ProductContextProvider>
+              <Navbar />
+              <div className='flex-grow'>
+                <PaginationProvider>
+                  <Outlet />
+                </PaginationProvider>
+              </div>
+            </ProductContextProvider>
           </CartContextProvider>
         </WishlistContextProvider>
       </UserAuthProvider>

@@ -1,18 +1,45 @@
 import { Heart, Menu, Search, ShoppingCart, User, X } from "lucide-react";
 import React, { useState } from "react";
-import { Link, NavLink } from "react-router";
+import { Link, NavLink, useNavigate } from "react-router";
 import { useWishlist } from "../Context/Shopping/Wishlist"
 import { useCart } from "../Context/Shopping/Cart";
+import { useProduct } from "../Context/Products/ProductContext";
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [searchedValue, setSearchedValue] = useState("");
+    const [isSearchClicked, setIsSearchClicked] = useState(false);
+    const { setselectedCategory } = useProduct();
+    const navigate = useNavigate();
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
 
+    const handleKeyDown = (e) => {
+        if (e.key === "Enter") {
+            setSearchedValue(e.target.value);
+            const tempData = e.target.value.trim();
+            if (tempData) {
+                console.log(tempData);
+                setselectedCategory([tempData, "search"]);
+                setSearchedValue(null);
+                navigate("/product")
+            }
+        }
+    }
+
+    const handleSearchClicked = () => {
+        setIsSearchClicked((prev) => !prev);
+        if (searchedValue) {
+            setselectedCategory([searchedValue, "search"]);
+            setSearchedValue(null);
+            navigate("/product")
+        }
+    }
+
     const wishlistContextObj = useWishlist();
-    const {cartProductCount} = useCart();
+    const { cartProductCount } = useCart();
 
     return (
         <nav className="w-full px-[5vw] py-[2vh] bg-transparent relative z-10 flex items-center justify-between font-Inter">
@@ -63,7 +90,16 @@ const Navbar = () => {
             {/* Section 3: User Profile, Search, Like, Cart (hidden on mobile, flex on md and up) */}
             <div className="hidden md:flex items-center gap-[8%] w-3/12 justify-end">
                 <NavLink to="/account" className={({ isActive }) => (isActive ? "text-yellow-600" : "")}><User /></NavLink>
-                <NavLink to="#" className={({ isActive }) => (isActive ? "text-yellow-600" : "")}><Search /></NavLink>
+                {/* Search Input */}
+                <NavLink to="#" className={({ isActive }) => `${isActive ? "text-yellow-600" : ""} flex`}>
+                    <input
+                        type="text"
+                        onKeyDown={handleKeyDown}
+                        className={`${isSearchClicked ? "w-fit" : "w-0"} border-b-2 border-b-yellow-600 placeholder:font-medium placeholder:text-yellow-600 outline-none text-gray-700`}
+                        placeholder="Search Product"
+                    />
+                    <Search type="button" onClick={handleSearchClicked} />
+                </NavLink>
                 <NavLink to="/like" className={({ isActive }) => `${isActive ? "text-yellow-600" : ""} relative`}>
                     <Heart />
                     <span className="absolute -top-[50%] -right-[40%] font-semibold bg-yellow-600/80 px-1 rounded-full text-white scale-85">{wishlistContextObj.wishlistCount}
