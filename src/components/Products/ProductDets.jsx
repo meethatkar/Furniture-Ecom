@@ -129,7 +129,7 @@ const ProductDets = () => {
                   }}
                 > <Minus /> </button>
                 <p className='text-2xl mx-[20%]'>{CartNum}</p>
-                <button onClick={() => { setCartNum((prev) => prev + 1) }}> <Plus /> </button>
+                <button onClick={() => {setCartNum(prev=>prev+1)}}> <Plus /> </button>
               </span>
               <button className='bg-black/80 text-white font-semibold px-3 py-1.5 text-xl' onClick={toggleCart}> Add To Cart </button>
             </div>
