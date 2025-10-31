@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useProduct } from '../../Context/Products/ProductContext'
 import { Search } from 'lucide-react';
-import { Link, NavLink } from 'react-router';
 
 const ProductCategory = ({ }) => {
     const { products, categories, colors, setselectedCategory, selectedCategory } = useProduct();
