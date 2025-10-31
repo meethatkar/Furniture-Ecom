@@ -1,11 +1,11 @@
 import React from "react";
 import { HiPencilSquare } from "react-icons/hi2";
 import { IoTrashBin } from "react-icons/io5";
-import { useAuth } from "../../Context/UserAuth/UserAuth";
+import { getUserLogin } from "../../utils/LocalStorage"
 
 
 const Profile = () => {
-  const {user} = useAuth();
+  const user = getUserLogin();
 
   const userImg =
     user.gender === "Male"

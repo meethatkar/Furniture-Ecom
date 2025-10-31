@@ -5,6 +5,7 @@ import { Heart, Minus, Plus } from 'lucide-react';
 import { FaStar, FaStarHalfStroke, FaRegStar } from "react-icons/fa6";
 import { useWishlist } from '../../Context/Shopping/Wishlist';
 import { useCart } from '../../Context/Shopping/Cart';
+import { toast, ToastContainer } from 'react-toastify';
 
 
 const ProductDets = () => {
@@ -52,15 +53,18 @@ const ProductDets = () => {
   const changeWishlist = ()=>{
     if(!isInWishlist(selectedProducted[0].product_name)){
       addProduct(selectedProducted[0]);
+      toast.success("Product Added to Wishlist");
     }
     else{
       removeProduct(selectedProducted[0].product_name);
+      toast.warning("Product Removed to Wishlist");
     }
   }
 
   const toggleCart =()=>{
     if(!isProductCart(selectedProducted[0].product_name)){
       addToCart(selectedProducted[0],CartNum);
+      toast.success("Product Added to Cart");
     }
     // else{
     //   removeFromCart(selectedProducted[0].product_name);
@@ -80,6 +84,8 @@ const ProductDets = () => {
     <>
       {selectedProducted.length > 0 ?
         <div className='px-[5vw] flex items-start w-full gap-[5%] my-[2%]'>
+
+          {/* IMAGE DIV */}
           <div id="img-div" className='flex items-start justify-between w-1/2'>
             <div id="img-preview" className='w-[20%]'>
               {/* List of other images in small size */}
@@ -97,6 +103,8 @@ const ProductDets = () => {
               </div>
             </div>
           </div>
+
+          {/* TEXT DIV */}
           <div id="text-div" className='w-1/2'>
             <h2 className='text-5xl font-semibold'> {selectedProducted[0].product_name}</h2>
             <h5 className='text-3xl font-semibold text-yellow-600 my-[1%]'> {selectedProducted[0].product_price} </h5>

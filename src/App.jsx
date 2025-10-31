@@ -7,6 +7,7 @@ import { PaginationProvider } from './Context/PaginationContext';
 import { WishlistContextProvider } from './Context/Shopping/Wishlist';
 import { CartContextProvider } from './Context/Shopping/Cart';
 import UserAuthProvider from './Context/UserAuth/UserAuth';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
         </WishlistContextProvider>
       </UserAuthProvider>
       <Footer />
+      <ToastContainer autoClose={1500} />
     </div>
   )
 }

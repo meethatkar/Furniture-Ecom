@@ -3,6 +3,7 @@ import { Heart, Search, ShoppingCart } from 'lucide-react';
 import { useWishlist } from '../../Context/Shopping/Wishlist';
 import { Link } from 'react-router';
 import { useCart } from '../../Context/Shopping/Cart';
+import { toast, ToastContainer } from 'react-toastify';
 
 const ProductCard = ({ product }) => {
   const imgSpanRef = useRef(null);
@@ -15,19 +16,23 @@ const ProductCard = ({ product }) => {
   const toggleWishlist = ()=>{
     if(!wishlistContextObj.isInWishlist(product.product_name)){
       wishlistContextObj.addProduct(product);
+      toast.info("Product Wishlisted");
       // Add react toastify
     }
     else{
       wishlistContextObj.removeProduct(product.product_name);
+      toast.warning("Product Removed");
     }
   }
 
   const toggleCart = ()=>{
     if(!isProductCart(product.product_name)){
       addToCart(product);
+      toast.info("Product Added to Cart");
     }
     else{
       removeFromCart(product.product_name);
+      toast.warning("Product Removed");
     }
   }
 
