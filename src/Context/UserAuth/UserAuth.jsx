@@ -1,5 +1,4 @@
-import React, { createContext, useContext, useState } from 'react'
-import { getData } from '../../utils/LocalStorage';
+import React, { createContext, useContext, useEffect, useState } from 'react'
 
 export const authContext = createContext();
 
@@ -7,7 +6,7 @@ export const useAuth = ()=>{
   return useContext(authContext);
 }
 
-const userAuthProvider = ({children}) => {
+const UserAuthProvider = ({children}) => {
 
   const [user, setUser] = useState({
     name: String,
@@ -18,15 +17,17 @@ const userAuthProvider = ({children}) => {
     gender: String,
     age: String
   });
-  
-  const data = getData();
-  
+
+  const value = {
+    user,
+    setUser
+  }
 
   return (
-    <authContext.Provider>
+    <authContext.Provider value={value}>
       {children}
     </authContext.Provider>
   )
 }
 
-export default userAuthProvider
+export default UserAuthProvider
