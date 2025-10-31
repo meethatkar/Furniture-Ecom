@@ -8,7 +8,7 @@ const Like = () => {
     <div className='px-[5vw] py-[2%]'>
       {wishlistProductList.map((product)=>(
         <React.Fragment key={product.id}>
-          <ProductList product={product}/>
+          <ProductList product={product} className="w-[70%]" isCartPage={false}/>
         </React.Fragment>
       ))}
     </div>

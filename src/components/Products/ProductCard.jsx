@@ -49,7 +49,9 @@ const ProductCard = ({ product }) => {
           <ShoppingCart className= {`${isProductCart(product.product_name) ? "text-yellow-600" : ""} hover:text-yellow-600 transition-colors duration-200`} 
           type='button' onClick={toggleCart}/>
           <Heart className={`${wishlistContextObj.isInWishlist(product.product_name) ? "text-yellow-600": "hover:text-yellow-600"} transition-colors duration-200`} type='button' onClick={toggleWishlist}/>
-          <Search className='hover:text-yellow-600 transition-colors duration-200' />
+          <Link to={`/product/${product.product_name.replaceAll(" ","_")}`}>
+            <Search className='hover:text-yellow-600 transition-colors duration-200' />
+          </Link>
         </span>
       </span>
       <p className='text-[2vmax] md:text-[1.3vmax] font-light mt-[5%]'> {product.product_name} </p>
@@ -61,7 +63,7 @@ const ProductCard = ({ product }) => {
           ></span>
         ))}
       </div>
-      <h5 className='font-semibold text-[2vmax] md:text-[1.3vmax]'> {product.product_price} </h5>
+      <h5 className='font-semibold text-[2vmax] md:text-[1.3vmax]'> ₹{product.product_price} </h5>
     </div>
   );
 };
