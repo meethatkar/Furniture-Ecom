@@ -15,15 +15,16 @@ export const setData = (userDataObj)=>{
 }
 
 export const getUserLogin =()=>{
-  const tempData = localStorage.getItem("IsLoggedIn");
+  const tempData = sessionStorage.getItem("IsLoggedIn");
   if(tempData){
-    return tempData;
+    return JSON.parse(sessionStorage.getItem("LoggedInUserData"));
   }
   else{
     return false;
   }
 }
 
-export const setUserLogin =(value)=>{
-  localStorage.setItem("IsLoggedIn", value);
+export const setUserLogin =(value, currentUserData)=>{
+  sessionStorage.setItem("IsLoggedIn", value);
+  sessionStorage.setItem("LoggedInUserData",JSON.stringify(currentUserData));
 }
