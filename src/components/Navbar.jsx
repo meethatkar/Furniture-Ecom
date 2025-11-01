@@ -100,7 +100,7 @@ const Navbar = () => {
                     />
                     <Search type="button" onClick={handleSearchClicked} />
                 </NavLink>
-                <NavLink to="/like" className={({ isActive }) => `${isActive ? "text-yellow-600" : ""} relative`}>
+                <NavLink to="/wishlist" className={({ isActive }) => `${isActive ? "text-yellow-600" : ""} relative`}>
                     <Heart />
                     <span className="absolute -top-[50%] -right-[40%] font-semibold bg-yellow-600/80 px-1 rounded-full text-white scale-85">{wishlistContextObj.wishlistCount}
                     </span>
@@ -154,7 +154,7 @@ const Navbar = () => {
                     <div className="flex items-center gap-6 mt-4">
                         <NavLink to="/account" className={({ isActive }) => (isActive ? "text-yellow-600" : "")} onClick={toggleMenu}><User size={24} /></NavLink>
                         <NavLink to="#" className={({ isActive }) => (isActive ? "text-yellow-600" : "")} onClick={toggleMenu}><Search size={24} /></NavLink>
-                        <NavLink to="/like" className={({ isActive }) => (isActive ? "text-yellow-600" : "")} onClick={toggleMenu}><Heart size={24} /></NavLink>
+                        <NavLink to="/wishlist" className={({ isActive }) => (isActive ? "text-yellow-600" : "")} onClick={toggleMenu}><Heart size={24} /></NavLink>
                         <NavLink to="/cart" className={({ isActive }) => (isActive ? "text-yellow-600" : "")} onClick={toggleMenu}><ShoppingCart size={24} /></NavLink>
                     </div>
                 </div>
