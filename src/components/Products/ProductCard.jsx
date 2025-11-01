@@ -45,12 +45,12 @@ const ProductCard = ({ product }) => {
         onMouseLeave={() => setIsHovered(false)}
       >
         <Link to={`/product/${product.product_name.replaceAll(" ","_")}`}> <img ref={imgRef} src={product.product_img} alt="" className='h-full flex-grow object-cover'/> </Link>
-        <span className={`flex scale-[120%] items-center w-full justify-center gap-[10%] absolute bottom-0 z-10 left-0 right-0 transform transition-all duration-300 ease-in-out ${isHovered ? '-translate-y-[80%] opacity-100' : 'translate-y-full opacity-0'}`}>
-          <ShoppingCart className= {`${isProductCart(product.product_name) ? "text-yellow-600" : ""} hover:text-yellow-600 transition-colors duration-200`} 
+        <span className={`flex scale-[120%] items-center w-full justify-center gap-[10%] absolute bottom-0 z-10 left-0 right-0 transform transition-all duration-300 ease-in-out ${isHovered ? '-translate-y-[20%] md:-translate-y-[80%] opacity-100' : 'translate-y-full opacity-0'}`}>
+          <ShoppingCart className= {`${isProductCart(product.product_name) ? "text-yellow-600" : ""} hover:text-yellow-600 transition-colors duration-200 scale-50 md:scale-100`} 
           type='button' onClick={toggleCart}/>
-          <Heart className={`${wishlistContextObj.isInWishlist(product.product_name) ? "text-yellow-600": "hover:text-yellow-600"} transition-colors duration-200`} type='button' onClick={toggleWishlist}/>
+          <Heart className={`${wishlistContextObj.isInWishlist(product.product_name) ? "text-yellow-600": "hover:text-yellow-600"} transition-colors duration-200 scale-50 md:scale-100`} type='button' onClick={toggleWishlist}/>
           <Link to={`/product/${product.product_name.replaceAll(" ","_")}`}>
-            <Search className='hover:text-yellow-600 transition-colors duration-200' />
+            <Search className='hover:text-yellow-600 transition-colors duration-200 scale-50 md:scale-100' />
           </Link>
         </span>
       </span>

@@ -16,11 +16,11 @@ function App() {
 
   return (
     <div className='flex flex-col min-h-screen'>
-      <ScrollToTop /> {/* Render ScrollToTop here */}
       <UserAuthProvider>
         <WishlistContextProvider>
           <CartContextProvider>
             <ProductContextProvider>
+              <ScrollToTop /> {/* Render ScrollToTop here */}
               <Navbar />
               <div className='flex-grow'>
                 <PaginationProvider>

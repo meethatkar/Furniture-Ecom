@@ -269,6 +269,7 @@ export const ProductContextProvider = ({ children }) => {
 
     useEffect(() => {
         if (!Array.isArray(selectedCategory)) {
+            // Not an array
             if (selectedCategory === 'ALL') {
                 setfilteredProducts(products);
             }
@@ -281,12 +282,42 @@ export const ProductContextProvider = ({ children }) => {
             }
         }
         else {
-            setfilteredProducts(
-                products.filter((item) => {
-                    const LC = item.category.map((i) => i.toLowerCase());
-                    return (LC.includes(selectedCategory[0].toLowerCase()) || item.product_name.toLowerCase().includes(selectedCategory[0].toLowerCase()))
-                })
-            );
+            if (selectedCategory[1] === "search") {
+                setfilteredProducts(
+                    products.filter((item) => {
+                        const LC = item.category.map((i) => i.toLowerCase());
+                        return (LC.includes(selectedCategory[0].toLowerCase()) || item.product_name.toLowerCase().includes(selectedCategory[0].toLowerCase()))
+                    })
+                );
+            }
+            else if(selectedCategory[1] === "sorting"){
+                const sortingVal = selectedCategory[0];
+                let sortedProducts =[];
+                if(sortingVal === "default"){
+                    setfilteredProducts(products);
+                }
+                else if(sortingVal === "price-asc"){
+                    sortedProducts = [...filteredProducts].sort((a,b)=>{
+                        return a.product_price - b.product_price;
+                    })
+                }
+                else if(sortingVal === "price-desc"){
+                    sortedProducts = [...filteredProducts].sort((a,b)=>{
+                        return b.product_price - a.product_price;
+                    })
+                }
+                else if(sortingVal === "name-asc"){
+                    sortedProducts = [...filteredProducts].sort((a,b)=>{
+                        return a.product_name.localeCompare(b.product_name);
+                    })
+                }
+                else if(sortingVal === "name-desc"){
+                    sortedProducts = [...filteredProducts].sort((a,b)=>{
+                        return b.product_name.localeCompare(a.product_name);
+                    })
+                }
+                setfilteredProducts(sortedProducts);
+            }
         }
     }, [selectedCategory, products])
 

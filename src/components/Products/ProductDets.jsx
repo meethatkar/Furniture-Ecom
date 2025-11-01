@@ -83,18 +83,18 @@ const ProductDets = () => {
   return (
     <>
       {selectedProducted.length > 0 ?
-        <div className='px-[5vw] flex items-start w-full gap-[5%] my-[2%]'>
+        <div className='px-[5vw] flex flex-col md:flex-row items-start w-full gap-[5%] my-[2%]'>
 
           {/* IMAGE DIV */}
-          <div id="img-div" className='flex items-start justify-between w-1/2'>
-            <div id="img-preview" className='w-[20%]'>
+          <div id="img-div" className='flex flex-col-reverse md:flex-row items-start justify-between w-full md:w-1/2'>
+            <div id="img-preview" className='w-[20%] flex md:flex-col flex-row gap-[30%] md:gap-0'>
               {/* List of other images in small size */}
               <img src={selectedProducted[0].product_img} alt="" className='border-[1px] border-gray-400 mb-[20%]' type="button" onClick={() => { sildeImg(0) }} />
               {selectedProducted[0].more_imgs.map((img, i) => (
                 <img key={i} src={img} alt="" className='border-[1px] border-gray-400 mb-[20%]' type="button" onClick={() => { sildeImg(i + 1) }} />
               ))}
             </div>
-            <div id="img-slider" className='w-[75%] overflow-hidden'>
+            <div id="img-slider" className='w-full md:w-[75%] overflow-hidden'>
               <div ref={imgSilderRef} style={{display: "flex", transition: "0.3s", transform: `translateX(-${currentIdx * 100}%)`}}>
                 <img src={selectedProducted[0].product_img} alt="" className='w-full object-cover'/>
                 {selectedProducted[0].more_imgs.map((img, i) => (
@@ -105,7 +105,7 @@ const ProductDets = () => {
           </div>
 
           {/* TEXT DIV */}
-          <div id="text-div" className='w-1/2'>
+          <div id="text-div" className='w-full md:w-1/2 mt-[5%] md:mt-0'>
             <h2 className='text-5xl font-semibold'> {selectedProducted[0].product_name}</h2>
             <h5 className='text-3xl font-semibold text-yellow-600 my-[1%]'> {selectedProducted[0].product_price} </h5>
             {/* Customer Review */}
