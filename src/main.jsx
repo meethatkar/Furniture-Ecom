@@ -67,7 +67,7 @@ const router = createBrowserRouter([
         element: <Contact />
       },
       {
-        path: "/like",
+        path: "/wishlist",
         element: <Like />
       },
       {
