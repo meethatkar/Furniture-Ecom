@@ -20,51 +20,51 @@ const SignupForm = ({handleSignup, toggleLogin}) => {
   }
 
   return (
-    <div className="flex justify-center items-center w-1/2">
-      <form className="bg-white shadow-md rounded-xl px-10 py-8 w-full max-w-full" onSubmit={manageSubmit}>
+    <div className="flex justify-center items-center w-10/12 md:w-1/2">
+      <form className="bg-white shadow-md rounded-xl px-6 md:px-10 py-4 md:py-8 w-full max-w-full" onSubmit={manageSubmit}>
         <h2 className="text-yellow-600 text-3xl font-semibold border-b-4 border-yellow-600 pb-2 text-center mb-8">
           Sign-Up Form
         </h2>
 
-        <div className="grid grid-cols-2 gap-[5%]">
-          <div className="mb-5">
-          <label htmlFor="name" className="block text-xl font-medium mb-2">Name</label>
+        <div className="grid grid-cols-1 md:grid-cols-2 md:gap-[5%]">
+          <div className="mb-8 md:mb-5">
+          <label htmlFor="name" className="block text-base md:text-xl font-medium md:mb-0">Name</label>
           <input
             required
             id="name"
             name="name"
             type="text"
             placeholder="Enter your name"
-            className="w-full border-b-2 border-gray-400 px-4 pt-2 mb-[2%] text-xl focus:outline-none focus:border-yellow-600"
+            className="w-full border-b-2 border-gray-400 px-4 pt-2 md:mb-[2%] text-base md:text-xl focus:outline-none focus:border-yellow-600"
           />
         </div>
 
-        <div className="mb-5">
-          <label htmlFor="email" className="block text-xl font-medium mb-2">Email</label>
+        <div className="mb-8 md:mb-5">
+          <label htmlFor="email" className="block text-base md:text-xl font-medium md:mb-0">Email</label>
           <input
             required
             id="email"
             name="email"
             type="email"
             placeholder="Enter your email"
-            className="w-full border-b-2 border-gray-400 px-4 pt-2 mb-[2%] text-xl focus:outline-none focus:border-yellow-600"
+            className="w-full border-b-2 border-gray-400 px-4 pt-2 md:mb-[2%] text-base md:text-xl focus:outline-none focus:border-yellow-600"
           />
         </div>
 
-        <div className="mb-5">
-          <label htmlFor="password" className="block text-xl font-medium mb-2">Password</label>
+        <div className="mb-8 md:mb-5">
+          <label htmlFor="password" className="block text-base md:text-xl font-medium md:mb-0">Password</label>
           <input
             required
             id="password"
             name="password"
             type="password"
             placeholder="Enter your password"
-            className="w-full border-b-2 border-gray-400 px-4 pt-2 mb-[2%] text-xl focus:outline-none focus:border-yellow-600"
+            className="w-full border-b-2 border-gray-400 px-4 pt-2 md:mb-[2%] text-base md:text-xl focus:outline-none focus:border-yellow-600"
           />
         </div>
 
-        <div className="mb-5">
-          <label htmlFor="mobile" className="block text-xl font-medium mb-2">Mobile Number</label>
+        <div className="mb-8 md:mb-5">
+          <label htmlFor="mobile" className="block text-base md:text-xl font-medium md:mb-0">Mobile Number</label>
           <input
             required
             id="mobile"
@@ -73,29 +73,29 @@ const SignupForm = ({handleSignup, toggleLogin}) => {
             minLength={10}
             maxLength={10}
             placeholder="Enter your mobile number"
-            className="w-full border-b-2 border-gray-400 px-4 pt-2 mb-[2%] text-xl focus:outline-none focus:border-yellow-600"
+            className="w-full border-b-2 border-gray-400 px-4 pt-2 md:mb-[2%] text-base md:text-xl focus:outline-none focus:border-yellow-600"
           />
         </div>
 
-        <div className="mb-5">
-          <label htmlFor="age" className="block text-xl font-medium mb-2">Age</label>
+        <div className="mb-8 md:mb-5">
+          <label htmlFor="age" className="block text-base md:text-xl font-medium md:mb-0">Age</label>
           <input
             required
             id="age"
             name="age"
             type="number"
             placeholder="Enter your age"
-            className="w-full border-b-2 border-gray-400 px-4 pt-2 mb-[2%] text-xl focus:outline-none focus:border-yellow-600"
+            className="w-full border-b-2 border-gray-400 px-4 pt-2 md:mb-[2%] text-base md:text-xl focus:outline-none focus:border-yellow-600"
           />
         </div>
 
         <div className="mb-8">
-          <label htmlFor="gender" className="block text-xl font-medium mb-2">Gender</label>
+          <label htmlFor="gender" className="block text-base md:text-xl font-medium md:mb-0">Gender</label>
           <select
             required
             id="gender"
             name="gender"
-            className="w-full border-b-2 border-gray-400 px-4 pt-2 mb-[2%] text-xl focus:outline-none focus:border-yellow-600 bg-transparent"
+            className="w-full border-b-2 border-gray-400 px-4 pt-2 md:mb-[2%] text-base md:text-xl focus:outline-none focus:border-yellow-600 bg-transparent"
           >
             <option value="">Select gender</option>
             <option value="Male">Male</option>
@@ -105,25 +105,25 @@ const SignupForm = ({handleSignup, toggleLogin}) => {
         </div>
         </div>
 
-        <div className="mb-5 mt-[5%]">
-          <label htmlFor="address" className="block text-xl font-medium mb-2">Address</label>
+        <div className="mb-8 md:mb-5 mt-[5%]">
+          <label htmlFor="address" className="block text-base md:text-xl font-medium md:mb-0">Address</label>
           <textarea
             required
             id="address"
             name="address"
             placeholder="Enter your address"
             rows={2}
-            className="w-full border-b-2 border-gray-400 px-4 pt-2 mb-[2%] text-xl focus:outline-none focus:border-yellow-600"
+            className="w-full border-b-2 border-gray-400 px-4 pt-2 md:mb-[2%] text-base md:text-xl focus:outline-none focus:border-yellow-600"
           ></textarea>
         </div>
 
         <button
           type="submit"
-          className="w-full bg-yellow-600 text-white text-xl font-semibold py-2 rounded-lg hover:bg-yellow-700 transition"
+          className="w-full bg-yellow-600 text-white text-base md:text-xl font-semibold py-2 rounded-lg hover:bg-yellow-700 transition"
         >
           Sign Up
         </button>
-        <p className="text-gray-400 text-xl my-[1%]"> Already Have an account ? <button onClick={()=>{toggleLogin(false)}} className="text-yellow-600 underline"> Click Here </button></p>
+        <p className="text-gray-400 text-base md:text-xl my-[1%]"> Already Have an account ? <button onClick={()=>{toggleLogin(false)}} className="text-yellow-600 underline"> Click Here </button></p>
       </form>
     </div>
   );

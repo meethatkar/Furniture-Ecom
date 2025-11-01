@@ -19,7 +19,7 @@ const Big_Box = () => {
           <img src={single_data.img_src} alt="" className='w-12/12 group-hover:blur-xs group-hover:scale-120 group-hover:-translate-x-[10%] transition-all ease-in-out duration-500'/>
           <div className="BB-text-div absolute bottom-[10%] left-[5%]">
             <h3 className='text-[3.8vmax] md:text-[2.8vmax] font-medium mb-[5%]'> {single_data.text} </h3>
-            <Link to="/shop" className='border-b-2 text-[2.2vmax] md:text-[1.2vmax] font-medium font-Inter'> View More </Link>
+            <Link to="/product" className='border-b-2 text-[2.2vmax] md:text-[1.2vmax] font-medium font-Inter'> View More </Link>
           </div>
         </div>
       ))}

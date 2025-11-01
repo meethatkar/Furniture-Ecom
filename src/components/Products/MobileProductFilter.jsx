@@ -15,7 +15,7 @@ const MobileProductFilter = ({
 
   return (
     <div className="w-full px-2 py-4 bg-white rounded-md shadow-md md:hidden">
-      {/* Search Bar */}
+      {/* Search Bar
       <div className="relative mb-4">
         <form>
           <input
@@ -32,7 +32,7 @@ const MobileProductFilter = ({
           />
           <Search className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500" onClick={() => { getResult(searchedKey) }} size={18} />
         </form>
-      </div>
+      </div> */}
 
       {/* Categories Section */}
       <div className="mb-6">

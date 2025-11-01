@@ -1,5 +1,6 @@
 import React from 'react'
 import Button from '../Button'
+import { Link } from 'react-router'
 
 const Top_picks = () => {
   let data_obj = [
@@ -61,7 +62,7 @@ const Top_picks = () => {
           ))
         }
       </div>
-      <Button message="View More" />
+      <Link to="/product"> <Button message="View More" /> </Link>
     </div>
   )
 }
