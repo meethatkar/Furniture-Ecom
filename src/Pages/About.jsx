@@ -208,17 +208,17 @@ const About = () => {
         <div id="logo-wrapper" className='w-screen h-[16vh] flex relative items-center'>
           <div id="blur-1" className='w-5/12 h-full bg-gradient-to-r from-white/90 to-transparent absolute top-0 -left-[5%] translate-y-[10%] z-5'></div>
           <div id="blur-2" className='w-5/12 h-full bg-gradient-to-l from-white/90 to-transparent absolute top-0 right-[0%] translate-y-[10%] z-5'></div>
-          <div className="main-slider w-full h-full flex items-center gap-[8%] -translate-x-[10%] shrink-0">
+          <div className="main-slider w-full h-full flex items-center gap-0 md:gap-[8%] -translate-x-[10%] shrink-0">
             {ecom_list.map((item, i) => (
               <div className="company-block md:w-2/12 h-full shrink-0">
-                <img src={item.logo} alt="" className={`h-full w-full object-cover ${i === 0 ? "translate-y-[13%]" : ""}`} />
+                <img src={item.logo} alt="" className={`scale-80 md:scale-100 h-full w-full object-cover ${i === 0 ? "translate-y-[13%]" : ""}`} />
               </div>
             ))}
           </div>
-          <div className="main-slider w-full h-full flex items-center gap-[8%] md:translate-x-[135%] translate-x-[460%] shrink-0">
+          <div className="main-slider w-full h-full flex items-center gap-0 md:gap-[8%] md:translate-x-[135%] translate-x-[380%] shrink-0">
             {ecom_list.map((item, i) => (
               <div className="company-block md:w-2/12 h-full shrink-0">
-                <img src={item.logo} alt="" className={`h-full w-full object-cover ${i === 0 ? "translate-y-[20%]" : ""}`} />
+                <img src={item.logo} alt="" className={`scale-80 md:scale-100 h-full w-full object-cover ${i === 0 ? "translate-y-[20%]" : ""}`} />
               </div>
             ))}
           </div>
