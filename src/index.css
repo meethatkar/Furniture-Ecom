@@ -70,7 +70,7 @@ body::-webkit-scrollbar {
   }
 
   100% {
-    transform: translateX(-490%);
+    transform: translateX(-496%);
   }
 }
 
