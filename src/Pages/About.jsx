@@ -230,9 +230,9 @@ const About = () => {
           <Link to="/Contact"> <img src="/doubts_ask.png" alt="" className='w-full object-cover' /> </Link>
         </div>
         <div id="text" className='w-full md:flex-1 shrink-0 md:w-1/2'>
-          <Link to="/Contact"> <h2 className="text-lg md:text-[3vw] font-normal text-gray-800 mb-4 md:mb-[3%] w-fit mx-auto border-b-4 leading-none"> | We are Here too Help |</h2> </Link>
-          <p className='text-sm md:text-[1.2vw] text-black/50'> Have questions about our products, orders, or services? Simply click the link below to reach our support team and get quick answers to all your queries. </p>
-          <Link to="/Contact" className='underline text-base md:text-[1.5vw] text-blue-500 font-medium'> Ask Doubts Here </Link>
+          <Link to="/Contact"> <h2 className="text-2xl md:text-[3vmax] font-medium text-gray-800 mb-6 md:mb-[3%] w-fit mx-auto border-b-4 leading-none"> | We are Here too Help |</h2> </Link>
+          <p className='text-base md:text-[1.2vw] text-black/50 mb-1 md:mb-0'> Have questions about our products, orders, or services? Simply click the link below to reach our support team and get quick answers to all your queries. </p>
+          <Link to="/Contact" className='underline text-lg md:text-[1.5vw] text-blue-500 font-medium'> Ask Doubts Here </Link>
         </div>
       </div>
     </div>
