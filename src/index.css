@@ -8,10 +8,11 @@
   --font-TASA-Orbiter: 'TASA Orbiter', sans-serif;
 }
 
-body{
-    overflow-x: hidden;
+body {
+  overflow-x: hidden;
 }
-body::-webkit-scrollbar{
+
+body::-webkit-scrollbar {
   display: none;
 }
 
@@ -19,6 +20,7 @@ body::-webkit-scrollbar{
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -28,25 +30,27 @@ body::-webkit-scrollbar{
   from {
     transform: rotate(360deg);
   }
+
   to {
     transform: rotate(0deg);
   }
 }
 
-#sec-1-1 img, #abt-img1 {
+#sec-1-1 img,
+#abt-img1 {
   animation: rotate360 10s linear infinite;
 }
 
-#abt-img2{
+#abt-img2 {
   animation: -rotate360 10s linear infinite;
 }
 
-#feature-headings{
+#feature-headings {
   /* -webkit-text-stroke: 0.5px black; */
-  text-shadow: 0 4px 12px rgba(0,0,0,0.25), 0 1.5px 0 #222, 0 0.5px 0 #fff;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.25), 0 1.5px 0 #222, 0 0.5px 0 #fff;
 }
 
-#head-stroke{
+#head-stroke {
   -webkit-text-stroke: 3px rgba(0, 0, 0, 0.692);
 }
 
@@ -54,18 +58,37 @@ body::-webkit-scrollbar{
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-245%);
   }
 }
 
-.main-slider {
-  animation: slider-move 30s linear infinite;
-  will-change: transform;
+@keyframes slider-move-mobile {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-490%);
+  }
+}
+
+@media(min-width:701px) {
+  .main-slider {
+    animation: slider-move 30s linear infinite;
+    will-change: transform;
+  }
+}
+@media(max-width:700px) {
+  .main-slider {
+    animation: slider-move-mobile 20s linear infinite;
+    will-change: transform;
+  }
 }
 
 .company-block {
-  animation: company-slide-in 1s cubic-bezier(0.77,0,0.175,1) both;
+  animation: company-slide-in 1s cubic-bezier(0.77, 0, 0.175, 1) both;
 }
 
 @keyframes company-slide-in {
@@ -73,8 +96,14 @@ body::-webkit-scrollbar{
     opacity: 0;
     transform: translateY(40px) scale(0.95);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0) scale(1);
   }
+}
+
+/* MOBILE CUSTOMER REIVEW SECTION */
+.mob-review::-webkit-scrollbar {
+  display: none;
 }

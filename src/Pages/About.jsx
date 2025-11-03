@@ -108,7 +108,7 @@ const About = () => {
   ]
 
   return (
-  <div className='text-center px-[5vw] font-Inter border-t-2 border-t-gray-200 border-dotted flex flex-col'>
+    <div className='text-center px-[5vw] font-Inter border-t-2 border-t-gray-200 border-dotted flex flex-col'>
       {/* INTRO */}
       <div id="intro" className='h-screen flex flex-col justify-center items-center -mt-[3vw]'>
         <span className='mx-auto w-fit flex gap-[5%] items-center -translate-x-[5%]'>
@@ -116,9 +116,9 @@ const About = () => {
             id="abt-img1"
             src="https://demo.leebrosus.com/kosi/wp-content/uploads/2021/08/rev_home1.png"
             alt=""
-            className="h-[20vh] transition-transform duration-300 ease-in-out hover:scale-110"
+            className="h-[15vmin] md:h-[20vmin] transition-transform duration-300 ease-in-out hover:scale-110"
           />
-          <h1 id="head-stroke" className='text-[15vmax] tracking-widest border-b-5 border-b-yellow-500/30 border-dotted font-Asimovian leading-none '>
+          <h1 id="head-stroke" className='text-[10vmax] md:text-[15vmax] tracking-widest border-b-5 border-b-yellow-500/30 border-dotted font-Asimovian leading-none '>
             <span className="text-yellow-500 hover:text-yellow-300 transition-all ease hover:cursor-pointer">K</span>
             <span className="text-yellow-500 hover:text-yellow-300 transition-all ease hover:cursor-pointer">O</span>
             <span className="text-yellow-500 hover:text-yellow-300 transition-all ease hover:cursor-pointer">S</span>
@@ -128,19 +128,19 @@ const About = () => {
             id="abt-img2"
             src="https://demo.leebrosus.com/kosi/wp-content/uploads/2021/08/rev_home1.png"
             alt=""
-            className="h-[20vh] transition-transform duration-300 ease-in-out hover:scale-110"
+            className="h-[15vmin] md:h-[20vmin] transition-transform duration-300 ease-in-out hover:scale-110"
           />
         </span>
-        <p className='w-[55%] mx-auto text-xl font-Epunda-Slab text-gray-700'>
+        <p className='w-[85%] md:w-[55%] mx-auto text-lg md:text-xl font-Epunda-Slab text-gray-700'>
           We believe furniture should do more than fill a room—it should inspire the way you live. Our collection combines timeless craftsmanship with <span className='font-semibold text-yellow-500'> modern design </span>, offering pieces that are as durable as they are stylish. From cozy sofas to smart storage, every product is created with  comfort, <span className='font-semibold text-yellow-500'> quality,</span>and sustainability in mind. Whether you’re designing your first home or upgrading your favorite space, we make it simple to find <span className='font-semibold text-yellow-500'> furniture </span> that reflects your lifestyle. Delivered with care, our mission is to help you create a home you’ll love.
         </p>
       </div>
       {/* FEATURES */}
       <div id="features" className='mb-[13%]'>
-        <h2 className='text-[3vw] font-normal text-gray-800 mb-[1%]'> | What Makes Us Different | </h2>
-        <div id="cards" className="w-full flex items-stretch justify-between gap-[5%] px-[5vw]"> 
+        <h2 className='text-[4vmax] md:text-[3vmax] font-medium text-gray-800 mb-[1%]'> | What Makes Us Different | </h2>
+        <div id="cards" className="w-full flex flex-col md:flex-row items-stretch justify-between gap-[5%] px-[5vw]">
           {featuresData.map((item, i) => (
-            <div className="card w-4/12 flex-1 rounded-xl group hover:bg-gray-100 hover:rotate-y-20 hover:rotate-x-10 hover:-rotate-z-1 transition-all ease overflow-hidden relative shadow-lg hover:shadow-2xl" key={i}>
+            <div className="card w-full mb-[10%] md:mb-0 md:w-4/12 flex-1 rounded-xl group hover:bg-gray-100 hover:rotate-y-20 hover:rotate-x-10 hover:-rotate-z-1 transition-all ease overflow-hidden relative shadow-lg hover:shadow-2xl" key={i}>
               <img src={item.img_url} alt="" className='object-cover w-full h-full group-hover:opacity-0 transition-all ease duration-300' />
               <h4 id="feature-headings" className='absolute z-5 text-5xl font-semibold top-10/12 left-1/2 -translate-1/2 group-hover:opacity-0 transition-all ease duration-300 text-white'> {item.feature_heading} </h4>
               <p className="p-6 text-3xl font-semibold opacity-0 absolute top-1/2 -translate-y-1/2 inset-0 h-fit w-fit pointer-events-none group-hover:opacity-100 transition-all ease duration-300"> {item.subHeading}
@@ -153,60 +153,86 @@ const About = () => {
         </div>
       </div>
       {/* REVIEWS */}
-      <div id="customer-reviews" className='min-h-screen w-screen relative'>
-        <h2 className='text-6xl font-normal mb-[2%]'> | What Our Customers Say | </h2>
-        {
-          customer_reviews.map((review, i) => (
-            <div className={`review-cards p-6 border-2 h-fit w-3/12 relative shadow-md border-gray-500 ${review.cssClass} ${i % 2 == 0 ? "rounded-tr-2xl rounded-bl-2xl" : "rounded-tl-2xl rounded-br-2xl"}`}>
-              <span className='text-2xl font-semibold'> {review.customerName} </span>
-              <div className="flex items-center mb-2 mx-auto w-fit">
-                {[...Array(5)].map((_, idx) => (
-                  <svg
-                    key={idx}
-                    className={`w-5 h-5 ${idx < review.ratings ? "text-yellow-400" : "text-gray-300"}`}
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.175c.969 0 1.371 1.24.588 1.81l-3.38 2.455a1 1 0 00-.364 1.118l1.287 3.966c.3.922-.755 1.688-1.54 1.118l-3.38-2.455a1 1 0 00-1.175 0l-3.38 2.455c-.784.57-1.838-.196-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118L2.05 9.394c-.783-.57-.38-1.81.588-1.81h4.175a1 1 0 00.95-.69l1.286-3.967z" />
-                  </svg>
-                ))}
+      <div id="customer-reviews" className='py-[3%] md:min-h-screen w-screen relative'>
+        <h2 className='text-3xl md:text-6xl -ml-5 md:ml-0 font-medium mb-[2%]'> | What Our Customers Say | </h2>
+        {/* DESKTOP VIEW */}
+        <div className='hidden md:block'>
+          {
+            customer_reviews.map((review, i) => (
+              <div className={`review-cards p-6 border-2 h-fit hidden md:block w-3/12 relative shadow-md border-gray-500 ${review.cssClass} ${i % 2 == 0 ? "rounded-tr-2xl rounded-bl-2xl" : "rounded-tl-2xl rounded-br-2xl"}`}>
+                <span className='text-xl font-semibold'> {review.customerName} </span>
+                <div className="flex items-center mb-2 mx-auto w-fit">
+                  {[...Array(5)].map((_, idx) => (
+                    <svg
+                      key={idx}
+                      className={`w-5 h-5 ${idx < review.ratings ? "text-yellow-400" : "text-gray-300"}`}
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.175c.969 0 1.371 1.24.588 1.81l-3.38 2.455a1 1 0 00-.364 1.118l1.287 3.966c.3.922-.755 1.688-1.54 1.118l-3.38-2.455a1 1 0 00-1.175 0l-3.38 2.455c-.784.57-1.838-.196-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118L2.05 9.394c-.783-.57-.38-1.81.588-1.81h4.175a1 1 0 00.95-.69l1.286-3.967z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className='text-gray-500'> {review.review} </p>
               </div>
-              <p className='text-gray-500'> {review.review} </p>
-            </div>
-          ))
-        }
+            ))
+          }
+        </div>
+        {/* MOBILE VIEW */}
+        <div className='mob-review flex md:hidden items-center gap-[10%] overflow-x-scroll w-[90%]'>
+          {
+            customer_reviews.map((cr, i)=>(
+              <div className={`mt-[10%] mob-review-cards flex-shrink-0 w-10/12 border-[1px] px-3 py-1.5 ${cr.cssClass} ${i % 2 == 0 ? "rounded-tr-2xl rounded-bl-2xl" : "rounded-tl-2xl rounded-br-2xl"}`}>
+                <span className='text-xl font-semibold'> {cr.customerName} </span>
+                <div className="flex items-center mb-2 mx-auto w-fit">
+                  {[...Array(5)].map((_, idx) => (
+                    <svg
+                      key={idx}
+                      className={`w-5 h-5 ${idx < cr.ratings ? "text-yellow-400" : "text-gray-300"}`}
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.175c.969 0 1.371 1.24.588 1.81l-3.38 2.455a1 1 0 00-.364 1.118l1.287 3.966c.3.922-.755 1.688-1.54 1.118l-3.38-2.455a1 1 0 00-1.175 0l-3.38 2.455c-.784.57-1.838-.196-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118L2.05 9.394c-.783-.57-.38-1.81.588-1.81h4.175a1 1 0 00.95-.69l1.286-3.967z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className='text-gray-500'> {cr.review} </p>
+              </div>
+            ))
+          }
+        </div>
       </div>
       {/* ECOM LISTING */}
-        <div id="ecom-listing" className="my-[20vh] ">
-        <h2 className="text-[3vw] font-normal text-gray-800 mb-[3%] w-fit mx-auto border-b-4 leading-none"> | Also Available On |</h2>
-        <div id="logo-wrapper" className='w-screen h-[16vh] flex relative'>
+      <div id="ecom-listing" className="my-[20vmin] ">
+        <h2 className="text-[3vmax] font-medium text-gray-800 mb-[3%] w-fit mx-auto border-b-4 leading-none"> | Also Available On |</h2>
+        <div id="logo-wrapper" className='w-screen h-[16vh] flex relative items-center'>
           <div id="blur-1" className='w-5/12 h-full bg-gradient-to-r from-white/90 to-transparent absolute top-0 -left-[5%] translate-y-[10%] z-5'></div>
           <div id="blur-2" className='w-5/12 h-full bg-gradient-to-l from-white/90 to-transparent absolute top-0 right-[0%] translate-y-[10%] z-5'></div>
-          <div className="main-slider w-full h-full flex items-center gap-[8%] -translate-x-[10%] shrink-0">
-          {ecom_list.map((item, i) => (
-            <div className="company-block w-2/12 h-full shrink-0">
-              <img src={item.logo} alt="" className={`h-full w-full object-cover ${i === 0 ? "translate-y-[13%]" : ""}`} />
-            </div>
-          ))}
-        </div>
-        <div className="main-slider w-full h-full flex items-center gap-[8%] translate-x-[135%] shrink-0">
-          {ecom_list.map((item, i) => (
-            <div className="company-block w-2/12 h-full shrink-0">
-              <img src={item.logo} alt="" className={`h-full w-full object-cover ${i === 0 ? "translate-y-[20%]" : ""}`} />
-            </div>
-          ))}
-        </div>
+          <div className="main-slider w-full h-full flex items-center gap-0 md:gap-[8%] -translate-x-[10%] shrink-0">
+            {ecom_list.map((item, i) => (
+              <div className="company-block md:w-2/12 h-full shrink-0">
+                <img src={item.logo} alt="" className={`scale-80 md:scale-100 h-full w-full object-cover ${i === 0 ? "translate-y-[13%]" : ""}`} />
+              </div>
+            ))}
+          </div>
+          <div className="main-slider w-full h-full flex items-center gap-0 md:gap-[8%] md:translate-x-[135%] translate-x-[380%] shrink-0">
+            {ecom_list.map((item, i) => (
+              <div className="company-block md:w-2/12 h-full shrink-0">
+                <img src={item.logo} alt="" className={`scale-80 md:scale-100 h-full w-full object-cover ${i === 0 ? "translate-y-[20%]" : ""}`} />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
       {/* CONTACT US LINK */}
       <div id="closing" className='w-full md:w-screen flex flex-col md:flex-row items-center gap-6 md:gap-[10%] pr-0 md:pr-[10vw] mb-10 md:mb-[10vh]'>
         <div id="img-div" className='w-full md:flex-1 shrink-0 md:w-1/2 rounded-2xl overflow-hidden mb-4 md:mb-0'>
-          <Link to="/Contact"> <img src="/doubts_ask.png" alt="" className='w-full object-cover'/> </Link>
+          <Link to="/Contact"> <img src="/doubts_ask.png" alt="" className='w-full object-cover' /> </Link>
         </div>
         <div id="text" className='w-full md:flex-1 shrink-0 md:w-1/2'>
-          <Link to="/Contact"> <h2 className="text-lg md:text-[3vw] font-normal text-gray-800 mb-4 md:mb-[3%] w-fit mx-auto border-b-4 leading-none"> | We are Here too Help |</h2> </Link>
-          <p className='text-sm md:text-[1.2vw] text-black/50'> Have questions about our products, orders, or services? Simply click the link below to reach our support team and get quick answers to all your queries. </p>
-          <Link to="/Contact" className='underline text-base md:text-[1.5vw] text-blue-500 font-medium'> Ask Doubts Here </Link>
+          <Link to="/Contact"> <h2 className="text-2xl md:text-[3vmax] font-medium text-gray-800 mb-6 md:mb-[3%] w-fit mx-auto border-b-4 leading-none"> | We are Here too Help |</h2> </Link>
+          <p className='text-base md:text-[1.2vw] text-black/50 mb-1 md:mb-0'> Have questions about our products, orders, or services? Simply click the link below to reach our support team and get quick answers to all your queries. </p>
+          <Link to="/Contact" className='underline text-lg md:text-[1.5vw] text-blue-500 font-medium'> Ask Doubts Here </Link>
         </div>
       </div>
     </div>
