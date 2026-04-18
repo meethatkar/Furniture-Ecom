@@ -19,7 +19,6 @@ const SEO = ({
       <title>{title}</title>
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
-      <meta name="google-site-verification" content="XHrE5DdAWrcz9ViqhNTuY06fNGF5Pr3lUhSpMaeLfz8" />
       {noIndex ? (
         <meta name="robots" content="noindex, nofollow" />
       ) : (
