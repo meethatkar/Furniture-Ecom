@@ -23,7 +23,7 @@ export const BlogContextProvider = ({ children }) => {
             ),
             date: "December 5 2020",
             category: "Crafts",
-            img_src: "https://img.staticmb.com/mbcontent/images/crop/uploads/2023/3/floor-lamp_0_1200.jpg.webp",
+            img_src: "/Blog/Blog_1.webp",
             id: useId()
         },
         {
@@ -38,7 +38,7 @@ export const BlogContextProvider = ({ children }) => {
             ),
             date: "January 10 2021",
             category: "Wood",
-            img_src: "https://demo.leebrosus.com/kosi/wp-content/uploads/2021/08/blog-5-1000x510.jpg",
+            img_src: "/Blog/Blog_2.webp",
             id: useId()
         },
         {
@@ -53,7 +53,7 @@ export const BlogContextProvider = ({ children }) => {
             ),
             date: "February 2 2021",
             category: "Interior",
-            img_src: "https://www.homesindiamagazine.com/uploaded_images/newstransfer/ze77Hexagone%20Classic%20Vert%20Rug%20(1).jpg",
+            img_src: "/Blog/Blog_3.webp",
             id: useId()
         },
         {
@@ -68,7 +68,7 @@ export const BlogContextProvider = ({ children }) => {
             ),
             date: "July 3 2021",
             category: "Interior",
-            img_src: "https://www.sunmory.com/cdn/shop/articles/Interior-of-living-room-with-sofa-floor-lamp-and-glowing-lamps-in-evening.webp?v=1727075986&width=1400",
+            img_src: "/Blog/Blog_4.jpg",
             id: useId()
         },
         {
@@ -83,7 +83,7 @@ export const BlogContextProvider = ({ children }) => {
             ),
             date: "March 15 2021",
             category: "Handmade",
-            img_src: "https://www.thespruce.com/thmb/cCdvwXUgnnIRHoV0nfOYf26rx1w=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/beautiful-living-rooms-with-built-in-shelving-4122539-hero-2a0ac4d1d64a4561a22c926d9ba0b0ed.jpg",
+            img_src: "/Blog/Blog_5.webp",
             id: useId()
         },
         {
@@ -98,7 +98,7 @@ export const BlogContextProvider = ({ children }) => {
             ),
             date: "April 8 2021",
             category: "Design",
-            img_src: "https://demothemedh.b-cdn.net/kosi/wp-content/uploads/2021/08/blog-1-740x415.jpg",
+            img_src: "/Blog/Blog_6.webp",
             id: useId()
         },
         {
@@ -113,7 +113,7 @@ export const BlogContextProvider = ({ children }) => {
             ),
             date: "May 20 2021",
             category: "Design",
-            img_src: "https://demothemedh.b-cdn.net/kosi/wp-content/uploads/2021/08/blog-5-740x415.jpg",
+            img_src: "/Blog/Blog_7.webp",
             id: useId()
         },
         {
@@ -128,7 +128,7 @@ export const BlogContextProvider = ({ children }) => {
             ),
             date: "June 12 2021",
             category: "Crafts",
-            img_src: "https://demothemedh.b-cdn.net/kosi/wp-content/uploads/2021/08/blog-3-740x415.jpg",
+            img_src: "/Blog/Blog_8.jpg",
             id: useId()
         },
         {
@@ -143,7 +143,7 @@ export const BlogContextProvider = ({ children }) => {
             ),
             date: "November 22 2020",
             category: "Interior",
-            img_src: "https://demothemedh.b-cdn.net/kosi/wp-content/uploads/2021/08/blog-1-740x415.jpg",
+            img_src: "/Blog/Blog_9.webp",
             id: useId()
         },
         {
@@ -158,7 +158,7 @@ export const BlogContextProvider = ({ children }) => {
             ),
             date: "August 18 2021",
             category: "Design",
-            img_src: "https://elevatehomedecor.com/wp-content/smush-webp/2024/08/green-leafed-plant-3094211-1536x1024.jpg.webp",
+            img_src: "/Blog/Blog_10.webp",
             id: useId()
         }
     ]);
@@ -172,7 +172,7 @@ export const BlogContextProvider = ({ children }) => {
         { name: "Wood" }
     ]);
 
-    const value = { blog,category };
+    const value = { blog, category };
     return (
         <BlogContext.Provider value={value}>
             {children}

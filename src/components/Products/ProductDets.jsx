@@ -89,16 +89,16 @@ const ProductDets = () => {
           <div id="img-div" className='flex flex-col-reverse md:flex-row items-start justify-between w-full md:w-1/2'>
             <div id="img-preview" className='w-[20%] flex md:flex-col flex-row gap-[30%] md:gap-0'>
               {/* List of other images in small size */}
-              <img src={selectedProducted[0].product_img} alt="" className='border-[1px] border-gray-400 mb-[20%]' type="button" onClick={() => { sildeImg(0) }} />
+              <img src={selectedProducted[0].product_img} alt="" className='border-[1px] border-gray-400 aspect-square object-cover mb-[20%]' type="button" onClick={() => { sildeImg(0) }} />
               {selectedProducted[0].more_imgs.map((img, i) => (
-                <img key={i} src={img} alt="" className='border-[1px] border-gray-400 mb-[20%]' type="button" onClick={() => { sildeImg(i + 1) }} />
+                <img key={i} src={img} alt="" className='border-[1px] border-gray-400 aspect-square object-cover mb-[20%]' type="button" onClick={() => { sildeImg(i + 1) }} />
               ))}
             </div>
             <div id="img-slider" className='w-full md:w-[75%] overflow-hidden'>
               <div ref={imgSilderRef} style={{display: "flex", transition: "0.3s", transform: `translateX(-${currentIdx * 100}%)`}}>
-                <img src={selectedProducted[0].product_img} alt="" className='w-full object-cover'/>
+                <img src={selectedProducted[0].product_img} alt="" className='min-w-full aspect-square object-cover'/>
                 {selectedProducted[0].more_imgs.map((img, i) => (
-                  <img key={i} src={img} alt="" className='w-full object-cover'/>
+                  <img key={i} src={img} alt="" className='min-w-full aspect-square object-cover'/>
                 ))}
               </div>
             </div>

@@ -7,17 +7,17 @@ const Blogs = () => {
 
   const data = [
     {
-      img_src : "https://demothemedh.b-cdn.net/kosi/wp-content/uploads/2021/08/blog-1-740x415.jpg",
+      img_src : "/Blog/Blog_1.webp",
       title : "Going all-in with millennial design",
       date : "August 3, 2024"
     },
     {
-      img_src : "https://demothemedh.b-cdn.net/kosi/wp-content/uploads/2021/08/blog-2-740x415.jpg",
+      img_src : "/Blog/Blog_2.webp",
       title : "Exploring new ways of decorating",
       date : "July 2, 2025"
     },
     {
-      img_src : "https://demothemedh.b-cdn.net/kosi/wp-content/uploads/2021/08/blog-3-740x415.jpg",
+      img_src : "/Blog/Blog_3.webp",
       title : "Handmade pieces that took time to make",
       date : "August 25, 2025"
     }

@@ -24,11 +24,11 @@ const Product = () => {
 
   return (
     <div className='px-[5vw] w-screen font-sans flex justify-between my-[2%]'>
-      <div id="product-left" className='w-full md:w-[70%] flex flex-col gap-[5%]'>
+      <div id="product-left" className='w-full md:w-[70%] flex flex-col'>
         <div id="filter-sec" className='w-full hidden md:block'>
           <ProductFilter perPage={perPage} setPerPage={setPerPage} setCurrentPage={setCurrentPage} />
         </div>
-        <div id="filter-sec-mobile" className='mb-4'>
+        <div id="filter-sec-mobile" className='mb-4 md:hidden'>
           <div className='flex  items-center gap-[5%]'>
             {showCategory ?
               <>
