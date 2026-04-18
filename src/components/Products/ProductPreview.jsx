@@ -15,7 +15,7 @@ const ProductPreview = () => {
   // here we are creating new prodcuts card for every product and using useRef in ProductCard.jsx 
   return (
 
-    <div id="productPreview" className='w-full grid grid-cols-2 md:grid-cols-3 gap-[5%] md:gap-[2%] pb-[10%]'>
+    <div id="productPreview" className='w-full grid grid-cols-2 md:grid-cols-3 gap-[5%] md:gap-[2%] pb-8'>
       {currentProducts.map((p) => (
           <ProductCard key={[p.id]} product={p} />
       ))}

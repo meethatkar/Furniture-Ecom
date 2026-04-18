@@ -25,9 +25,9 @@ const Home = () => {
         <Top_picks />
       </div>
       <div id="sec-4" className='w-screen px-[5vw] my-[10%] md:my-[5%] relative'>
-        <span className='w-fit inline-block overflow-hidden'>
-        <img src="https://demothemedh.b-cdn.net/kosi/wp-content/uploads/2021/08/h1_section-banner.jpg" alt="" className='md:w-full md:h-fit h-[50vh] object-cover hover:blur-sm hover:scale-102 hover:-translate-y-[2%] transition-all duration-500 ease-in-out' />
-        </span>
+        <div className='w-full overflow-hidden'>
+        <img src="/home/CTA.webp" alt="Classical Decor Banner" className='w-full md:h-auto h-[50vh] object-cover hover:blur-sm hover:scale-102 hover:-translate-y-[2%] transition-all duration-500 ease-in-out' />
+        </div>
         <div id="sec-4-text-div" className='absolute text-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 '>
           <h4 className='text-[1.5vmax] font-medium'> NEW ARRIVALS </h4>
           <h2 className='text-[4vmax] font-semibold my-[2%] whitespace-nowrap'> Classical Decor </h2>

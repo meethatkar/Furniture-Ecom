@@ -5,26 +5,26 @@ import { Link } from 'react-router'
 const Top_picks = () => {
   let data_obj = [
     {
-    img_src : "https://demothemedh.b-cdn.net/kosi/wp-content/uploads/2021/08/Product-IMG-500x591.jpg",
-    name: "Afterroom Coat Hanger",
-    price : "$183.76",
-    colors: ["#D1C4B3", "#B0D9B1", "#F5EEB8", "#E0BBE4", "#FFC7B0"]
+      img_src : "/Products/Clock_2.webp",
+      name: "Modern Wall Clock",
+      price : "$124.08",
+      colors: ["#767676", "#E8D1AB", "#DDEEEB"]
     },
     {
-      img_src : "https://demothemedh.b-cdn.net/kosi/wp-content/uploads/2021/08/Product-IMG-3-500x591.jpg",
-      name : "Norm Stone Lamp",
+      img_src : "/Products/Lamp_2.webp",
+      name : "Ceramic Table Lamp",
       price : "$150.40",
       colors: ["#F0F8DC", "#D3D3D3", "#ADD8E6", "#FDF5E6", "#E6E6FA"]
     },
     {
-      img_src : "https://demothemedh.b-cdn.net/kosi/wp-content/uploads/2021/08/Product-IMG-2-500x591.jpg",
-      name: "Norm Wall Clock",
+      img_src : "/Products/Clock_1.webp",
+      name: "Minimalist Wall Clock",
       price : "$101.21",
       colors: ["#696969", "#90EE90", "#F5F5DC", "#E6E6FA", "#B0E0E6"]
     },
     {
-      img_src : "https://demothemedh.b-cdn.net/kosi/wp-content/uploads/2021/08/Product-IMG-1-500x591.jpg",
-      name: "Pack Bobber Lamps ",
+      img_src : "/Products/Lamp_3.webp",
+      name: "Adjustable Wall Lamp",
       price: "$147.52",
       colors: ["#F0F8DC", "#696969", "#FDF5E6", "#E6E6FA", "#B0E0E6"]
     }
@@ -37,14 +37,14 @@ const Top_picks = () => {
         {
           data_obj.map((single_data,index)=>(
             <div className="product-det text-start group" key={index}>
-              <span className='overflow-hidden block w-full'>
+              <div className='overflow-hidden block w-full'>
                 <img
                   src={single_data.img_src}
                   alt=""
-                  className='w-full h-full object-cover group-hover:scale-115 transition-all duration-500'
+                  className='w-full aspect-square object-cover group-hover:scale-115 transition-all duration-500'
                   style={{ display: 'block' }}
                 />
-              </span>
+              </div>
               <p className='text-[2vmax] md:text-[1.3vmax] mt-[5%]'> {single_data.name} </p>
               <div className="flex gap-2 mt-2">
                 {
@@ -62,7 +62,7 @@ const Top_picks = () => {
           ))
         }
       </div>
-      <Link to="/product"> <Button message="View More" /> </Link>
+      <Link to="/product" className="inline-block mt-4 md:mt-8"> <Button message="View More" /> </Link>
     </div>
   )
 }
