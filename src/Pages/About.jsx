@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router'
+import SEO from '../components/SEO'
 
 const About = () => {
 
@@ -109,6 +110,25 @@ const About = () => {
 
   return (
     <div className='text-center px-[5vw] font-Inter border-t-2 border-t-gray-200 border-dotted flex flex-col'>
+      <SEO
+        title="About Urbanwoods — Our Story & Mission"
+        description="Learn about Urbanwoods — our commitment to quality craftsmanship, eco-friendly materials, and fast delivery. Furniture built with care, for homes built with love."
+        keywords="about urbanwoods, furniture company, eco-friendly furniture brand, handcrafted home decor, furniture mission"
+        ogUrl="https://urbanwood-rosy.vercel.app/about"
+        canonicalUrl="https://urbanwood-rosy.vercel.app/about"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "AboutPage",
+          "name": "About Urbanwoods",
+          "url": "https://urbanwood-rosy.vercel.app/about",
+          "description": "Urbanwoods creates handcrafted, eco-friendly furniture with a focus on quality, sustainability, and modern design.",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Urbanwoods",
+            "logo": "https://urbanwood-rosy.vercel.app/logo.png"
+          }
+        }}
+      />
       {/* INTRO */}
       <div id="intro" className='h-screen flex flex-col justify-center items-center -mt-[3vw]'>
         <span className='mx-auto w-fit flex gap-[5%] items-center -translate-x-[5%]'>
@@ -181,7 +201,7 @@ const About = () => {
         {/* MOBILE VIEW */}
         <div className='mob-review flex md:hidden items-center gap-[10%] overflow-x-scroll w-[90%]'>
           {
-            customer_reviews.map((cr, i)=>(
+            customer_reviews.map((cr, i) => (
               <div className={`mt-[10%] mob-review-cards flex-shrink-0 w-10/12 border-[1px] px-3 py-1.5 ${cr.cssClass} ${i % 2 == 0 ? "rounded-tr-2xl rounded-bl-2xl" : "rounded-tl-2xl rounded-br-2xl"}`}>
                 <span className='text-xl font-semibold'> {cr.customerName} </span>
                 <div className="flex items-center mb-2 mx-auto w-fit">

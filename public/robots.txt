@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Disallow checkout / account pages from being indexed
+Disallow: /cart
+Disallow: /account
+Disallow: /wishlist
+
+# Sitemap location
+Sitemap: https://urbanwood-rosy.vercel.app/sitemap.xml

@@ -4,18 +4,61 @@ import Big_Box from '../components/Home/Big_Box'
 import Top_picks from '../components/Home/Top_picks'
 import Button from '../components/Button'
 import Blogs from '../components/Home/Blogs'
+import SEO from '../components/SEO'
+
+const homepageStructuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://urbanwood-rosy.vercel.app/#website",
+      "url": "https://urbanwood-rosy.vercel.app/",
+      "name": "Urbanwoods",
+      "description": "Premium handcrafted furniture and home decor",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://urbanwood-rosy.vercel.app/product?search={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://urbanwood-rosy.vercel.app/#organization",
+      "name": "Urbanwoods",
+      "url": "https://urbanwood-rosy.vercel.app/",
+      "logo": "https://urbanwood-rosy.vercel.app/logo.png",
+      "sameAs": [
+        "https://twitter.com/urbanwoods",
+        "https://www.instagram.com/urbanwoods",
+        "https://www.facebook.com/urbanwoods"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "url": "https://urbanwood-rosy.vercel.app/contact"
+      }
+    }
+  ]
+};
 
 const Home = () => {
   return (
     <div className='w-screen font-TASA-Orbiter -mt-[18%] md:-mt-[5%]'>
+      <SEO
+        title="Urbanwoods — Premium Furniture & Home Decor"
+        description="Shop handcrafted eco-friendly furniture at Urbanwoods. Explore chairs, table lamps, wall clocks, wooden drawers & rattan baskets with fast delivery."
+        keywords="premium furniture, eco-friendly chairs, table lamps, wall clocks, wooden drawers, rattan baskets, home decor, interior design"
+        ogUrl="https://urbanwood-rosy.vercel.app/"
+        structuredData={homepageStructuredData}
+      />
       <div id="sec-1" className='bg-[#F5E5D7] pt-[25%] md:pt-[10%] overflow-hidden md:h-[110vh] w-full flex md:flex-row flex-col items-center justify-center gap-[5vw]'>
         <div id="sec-1-1" className='w-fit md:mx-0 md:text-start text-center mx-auto'>
-          <img src="https://demo.leebrosus.com/kosi/wp-content/uploads/2021/08/rev_home1.png" alt="" className='mx-auto md:mx-0 w-fit'/>
-          <h2 className='text-[6vmax] font-semibold leading-none font-Asimovian my-[10%]'> Wooden <br /> Floor Lamp </h2>
+          <img src="https://demo.leebrosus.com/kosi/wp-content/uploads/2021/08/rev_home1.png" alt="Urbanwoods decorative lamp icon" className='mx-auto md:mx-0 w-fit' fetchpriority="high" />
+          <h1 className='text-[6vmax] font-semibold leading-none font-Asimovian my-[10%]'> Wooden <br /> Floor Lamp </h1>
           <Link to="/product" className='text-[3vmax] md:text-[2vmax] pb-[1.5%] font-medium border-b-3'> Shop Now </Link>
         </div>
         <div id="sec-1-2" className='w-fit mt-[10%] md:mt-0'>
-          <img src="https://demo.leebrosus.com/kosi/wp-content/uploads/2021/08/rev_home1_2.png" alt="" className='w-[71%] md:mx-0 mx-auto'/>
+          <img src="https://demo.leebrosus.com/kosi/wp-content/uploads/2021/08/rev_home1_2.png" alt="Urbanwoods signature wooden floor lamp product" className='w-[71%] md:mx-0 mx-auto' fetchpriority="high" />
         </div>
       </div>
       <div id="sec-2">
@@ -26,23 +69,23 @@ const Home = () => {
       </div>
       <div id="sec-4" className='w-screen px-[5vw] my-[10%] md:my-[5%] relative'>
         <div className='w-full overflow-hidden'>
-        <img src="/home/CTA.webp" alt="Classical Decor Banner" className='w-full md:h-auto h-[50vh] object-cover hover:blur-sm hover:scale-102 hover:-translate-y-[2%] transition-all duration-500 ease-in-out' />
+          <img src="/home/CTA.webp" alt="Classical Decor collection — curated home decor pieces" className='w-full md:h-auto h-[50vh] object-cover hover:blur-sm hover:scale-102 hover:-translate-y-[2%] transition-all duration-500 ease-in-out' />
         </div>
         <div id="sec-4-text-div" className='absolute text-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 '>
           <h4 className='text-[1.5vmax] font-medium'> NEW ARRIVALS </h4>
           <h2 className='text-[4vmax] font-semibold my-[2%] whitespace-nowrap'> Classical Decor </h2>
-          <Button message="Order Now" Customclass='bg-transparent border-2 px-[6%] mt-[3%] hover:text-yellow-600 hover:border-yellow-600 transition-all ease-linear duration-300 font-medium text-[2vmax] md:text-[1.5vmax] py-[1.7%] font-Inter'/>
+          <Button message="Order Now" Customclass='bg-transparent border-2 px-[6%] mt-[3%] hover:text-yellow-600 hover:border-yellow-600 transition-all ease-linear duration-300 font-medium text-[2vmax] md:text-[1.5vmax] py-[1.7%] font-Inter' />
         </div>
       </div>
       <div id="sec-5">
         <Blogs />
       </div>
       <div id="sec-6" className='relative w-screen my-[10%] md:my-[5%]'>
-        <img src="https://demo.leebrosus.com/kosi/wp-content/uploads/2021/08/h1_section-banner-2.jpg" alt="" className='md:w-full h-[20vh] md:h-fit' />
+        <img src="https://demo.leebrosus.com/kosi/wp-content/uploads/2021/08/h1_section-banner-2.jpg" alt="Urbanwoods Instagram feed showcase" className='md:w-full h-[20vh] md:h-fit' loading="lazy" />
         <div id="sec-6-text-div" className='absolute text-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
-          <h2 className='text-[4vmax] md:text-[3vmax] font-medium leading-none'> Out Instagram </h2>
+          <h2 className='text-[4vmax] md:text-[3vmax] font-medium leading-none'> Our Instagram </h2>
           <p className='my-[4%] text-[2.1vmax] whitespace-nowrap md:text-[1.1vmax] text-black/50'> Follow our store on Instagram </p>
-          <a href="#" target='_blank' className='font-Inter text-[2.1vmax md:text-[1.1vmax] border-b-1 pb-1'> Follow Us </a>
+          <a href="https://instagram.com/urbanwoods" target='_blank' rel="noopener noreferrer" className='font-Inter text-[2.1vmax] md:text-[1.1vmax] border-b-1 pb-1'> Follow Us </a>
         </div>
       </div>
     </div>

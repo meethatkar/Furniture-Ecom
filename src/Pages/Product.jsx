@@ -8,7 +8,7 @@ import { usePagination } from '../Context/PaginationContext';
 import MobileProductFilter from '../components/Products/MobileProductFilter';
 import { Search } from 'lucide-react';
 import { FaFilter } from "react-icons/fa6";
-
+import SEO from '../components/SEO';
 
 
 const Product = () => {
@@ -24,6 +24,13 @@ const Product = () => {
 
   return (
     <div className='px-[5vw] w-screen font-sans flex justify-between my-[2%]'>
+      <SEO
+        title="Shop Furniture — Urbanwoods"
+        description="Browse our full collection of handcrafted furniture. Filter by category, color, and price. Find chairs, lamps, clocks, stools & more at Urbanwoods."
+        keywords="buy furniture online, handcrafted chairs, table lamps, wall clocks, wooden stools, rattan decor, home furniture shop"
+        ogUrl="https://urbanwood-rosy.vercel.app/product"
+        canonicalUrl="https://urbanwood-rosy.vercel.app/product"
+      />
       <div id="product-left" className='w-full md:w-[70%] flex flex-col'>
         <div id="filter-sec" className='w-full hidden md:block'>
           <ProductFilter perPage={perPage} setPerPage={setPerPage} setCurrentPage={setCurrentPage} />
