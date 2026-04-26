@@ -53,12 +53,12 @@ const Home = () => {
       />
       <div id="sec-1" className='bg-[#F5E5D7] pt-[25%] md:pt-[10%] overflow-hidden md:h-[110vh] w-full flex md:flex-row flex-col items-center justify-center gap-[5vw]'>
         <div id="sec-1-1" className='w-fit md:mx-0 md:text-start text-center mx-auto'>
-          <img src="https://demo.leebrosus.com/kosi/wp-content/uploads/2021/08/rev_home1.png" alt="Urbanwoods decorative lamp icon" className='mx-auto md:mx-0 w-fit' fetchpriority="high" />
+          <img src="/home/RotatingLogo.png" alt="Urbanwoods decorative lamp icon" className='mx-auto md:mx-0 w-fit' fetchpriority="high" />
           <h1 className='text-[6vmax] font-semibold leading-none font-Asimovian my-[10%]'> Wooden <br /> Floor Lamp </h1>
           <Link to="/product" className='text-[3vmax] md:text-[2vmax] pb-[1.5%] font-medium border-b-3'> Shop Now </Link>
         </div>
         <div id="sec-1-2" className='w-fit mt-[10%] md:mt-0'>
-          <img src="https://demo.leebrosus.com/kosi/wp-content/uploads/2021/08/rev_home1_2.png" alt="Urbanwoods signature wooden floor lamp product" className='w-[71%] md:mx-0 mx-auto' fetchpriority="high" />
+          <img src="/home/Hero.png" alt="Urbanwoods signature wooden floor lamp product" className='w-[71%] md:mx-0 mx-auto' fetchpriority="high" />
         </div>
       </div>
       <div id="sec-2">
