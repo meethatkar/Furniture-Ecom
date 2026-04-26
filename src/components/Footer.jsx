@@ -9,7 +9,7 @@ const Footer = () => {
         {/* Section 1: Logo and Address */}
         <div>
           <Link to="/" aria-label="Urbanwoods home">
-            <img src="https://demo.leebrosus.com/kosi/wp-content/uploads/2021/07/logo.svg" alt="Urbanwoods logo" className="mb-4" />
+            <img src="/LogoText.svg" alt="Urbanwoods logo" className="mb-4" />
           </Link>
           <address className="not-italic">
             <p className="text-gray-600 text-sm">400 University Drive Suite 200 Coral Gables,</p>
@@ -70,4 +70,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default Footer;

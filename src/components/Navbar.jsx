@@ -44,7 +44,7 @@ const Navbar = () => {
     return (
         <nav className="w-full px-[5vw] py-[2vh] bg-transparent relative z-10 flex items-center justify-between font-Inter">
             {/* Section 1: Image and Text */}
-            <img src="https://demo.leebrosus.com/kosi/wp-content/uploads/2021/07/logo.svg" alt="Logo" className="h-8" />
+            <img src="/LogoText.svg" alt="Logo" className="h-8" />
 
             {/* Hamburger menu for mobile */}
             <div className="md:hidden">

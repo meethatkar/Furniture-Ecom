@@ -81,7 +81,7 @@ const Home = () => {
         <Blogs />
       </div>
       <div id="sec-6" className='relative w-screen my-[10%] md:my-[5%]'>
-        <img src="https://demo.leebrosus.com/kosi/wp-content/uploads/2021/08/h1_section-banner-2.jpg" alt="Urbanwoods Instagram feed showcase" className='md:w-full h-[20vh] md:h-fit' loading="lazy" />
+        <img src="/Instagram_BG.jpg" alt="Urbanwoods Instagram feed showcase" className='md:w-full h-[20vh] md:h-fit' loading="lazy" />
         <div id="sec-6-text-div" className='absolute text-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
           <h2 className='text-[4vmax] md:text-[3vmax] font-medium leading-none'> Our Instagram </h2>
           <p className='my-[4%] text-[2.1vmax] whitespace-nowrap md:text-[1.1vmax] text-black/50'> Follow our store on Instagram </p>
